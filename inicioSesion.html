@@ -4,53 +4,94 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tienda Web: Inicio de Sesion</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/customStyles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   </head>
   <body class="bodyStyle">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+    <nav class="navbar navbar-expand-sm fixed-top" data-bs-theme="dark">
+      <div class="container-fluid flex-row flex-nowrap">
+        <div
+          class="offcanvas offcanvas-start sideBarStyle"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <img
+              src="img/log-yellow-pc-100.png"
+              class="mx-1"
+              height="50"
+              alt="Logo" />
+            <h4 class="offcanvas-title" id="offcanvasNavbarLabel">
+              Tienda Web
+            </h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <form class="my-1" role="search" style="width: 280px">
+              <div class="input-group">
+                <button
+                  class="btn btn-outline-warning rounded-start-pill"
+                  type="button"
+                  id="searchButton">
+                  <i class="bi bi-search"></i>
+                </button>
+                <input
+                  class="form-control border-warning rounded-end-pill"
+                  type="search"
+                  placeholder="Buscar"
+                  aria-label="Search" />
+              </div>
+            </form>
+
+            <div class="row my-sm-0 my-3"></div>
+
+            <div class="d-sm-flex gap-1 ms-sm-auto">
+              <button type="button" class="btn rounded-pill btn-warning my-1">
+                Iniciar Sesion
+              </button>
+              <div class="dropdown">
+                <button
+                  type="button"
+                  class="btn rounded-pill btn-outline-warning align dropdown-toggle ms-sm-auto my-1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <i class="bi bi-gear"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-sm-end">
+                  <li>
+                    <h6 class="dropdown-header">Acciones de Administrador</h6>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Alta de Usuarios</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Usuarios Registrados</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Catalogo</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
         <button
           class="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
           aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Dropdown link
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
       </div>
     </nav>
 
@@ -58,10 +99,6 @@
 
     <footer class="my-2"></footer>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
   </body>
 </html>

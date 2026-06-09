@@ -132,7 +132,103 @@
       </div>
     </nav>
 
-    <section id="sectionFilters"></section>
+    <section
+      id="sectionFilters"
+      class="d-flex justify-content-center align-items-center mx-1 my-2"
+      data-bs-theme="dark">
+      <div class="card bg-black border-1 shadow border-warning rounded-pill">
+        <div class="card-body">
+          <form class="needs-validation" novalidate>
+            <div class="d-inline-block">
+              <select
+                class="form-select bg-black text-warning rounded-pill border-warning-subtle"
+                id="validationCustom04"
+                required>
+                <option selected disabled value="">Categorias</option>
+                <option>Categoria 01</option>
+                <option>Categoria 02</option>
+                <option>Categoria 03</option>
+                <option>Categoria 04</option>
+              </select>
+            </div>
+
+            <div class="d-inline-block">
+              <div class="btn-group dropdown-center">
+                <button
+                  class="btn btn-outline-warning border-warning-subtle rounded-pill dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  data-bs-auto-close="outside"
+                  aria-expanded="false">
+                  Etiquetas
+                </button>
+                <ul
+                  class="dropdown-menu bg-black p-3 text-center"
+                  style="min-width: auto; width: max-content">
+                  <li class="mb-2">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="etiqueta01"
+                      autocomplete="off" />
+                    <label
+                      class="btn btn-outline-warning rounded-pill"
+                      for="etiqueta01">
+                      Etiqueta 01
+                    </label>
+                  </li>
+                  <li class="mb-2">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="etiqueta02"
+                      autocomplete="off" />
+                    <label
+                      class="btn btn-outline-warning rounded-pill"
+                      for="etiqueta02">
+                      Etiqueta 02
+                    </label>
+                  </li>
+                  <li class="mb-2">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="etiqueta03"
+                      autocomplete="off" />
+                    <label
+                      class="btn btn-outline-warning rounded-pill"
+                      for="etiqueta03">
+                      Etiqueta 03
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="d-inline-block">
+              <input
+                type="checkbox"
+                class="btn-check"
+                id="conStock"
+                autocomplete="off" />
+              <label
+                class="btn btn-outline-warning rounded-pill"
+                for="conStock">
+                Con Stock
+              </label>
+            </div>
+
+            <div class="d-inline-block">
+              <button
+                class="btn btn-warning rounded-pill text-nowrap"
+                type="button">
+                Aplicar Filtros
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
 
     <main class="my-5">
       <div class="container text-center" data-bs-theme="dark">

@@ -129,7 +129,7 @@
                     <a
                       class="dropdown-item text-warning"
                       href="../html/creacion_etiquetas.html"
-                      >Etiquetas/Categorías</a
+                      >Categorías/Etiquetas</a
                     >
                   </li>
                 </ul>
@@ -141,10 +141,12 @@
     </nav>
 
     <main class="my-2">
-      <div class="card mx-auto w-50 border-0 shadow-lg" data-bs-theme="dark">
+      <div
+        class="card mx-auto w-50 border-0 shadow-lg my-2"
+        data-bs-theme="dark">
         <div class="card-header cardStyle border-bottom border-warning">
-          <i class="bi bi-bookmark-plus"></i>
-          <span>Crear Etiqueta/Categoria</span>
+          <i class="bi bi-bookmark-plus text-warning"></i>
+          <span>Crear Categoria/Etiqueta</span>
         </div>
 
         <div class="card-body cardStyle">
@@ -200,6 +202,150 @@
               </button>
             </div>
           </form>
+        </div>
+      </div>
+
+      <div
+        class="card mx-auto w-75 border-0 shadow-lg my-2"
+        data-bs-theme="dark">
+        <div class="card-header cardStyle border-bottom border-warning">
+          <i class="bi bi-people text-warning"></i>
+          <span>Categorias Registradas </span>
+        </div>
+        <div class="card-body cardStyle">
+          <div class="table-responsive">
+            <table class="table table-striped table-hover text-center">
+              <thead class="border-bottom border-warning">
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Descripcion</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="align-text-bottom">
+                  <th scope="row">1</th>
+                  <td>Procesadores</td>
+                  <td>...</td>
+                  <td>
+                    <button
+                      type="button"
+                      id="buttonEditUser"
+                      class="btn btn-outline-warning">
+                      <i class="bi bi-bookmarks-fill"></i>
+                      <span>Etiquetas</span>
+                    </button>
+                    <button
+                      type="button"
+                      id="buttonEditUser"
+                      class="btn btn-outline-warning">
+                      <i class="bi bi-pencil-square"></i>
+                      <span>Editar</span>
+                    </button>
+                    <button
+                      type="button"
+                      id="buttonDeleteUser"
+                      class="btn btn-outline-danger">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="align-text-bottom">
+                  <th scope="row">2</th>
+                  <td>Placas de Video</td>
+                  <td>...</td>
+                  <td>
+                    <button
+                      type="button"
+                      id="buttonEditUser"
+                      class="btn btn-outline-warning">
+                      <i class="bi bi-bookmarks-fill"></i>
+                      <span>Etiquetas</span>
+                    </button>
+                    <button
+                      type="button"
+                      id="buttonEditUser"
+                      class="btn btn-outline-warning">
+                      <i class="bi bi-pencil-square"></i>
+                      <span>Editar</span>
+                    </button>
+                    <button
+                      type="button"
+                      id="buttonDeleteUser"
+                      class="btn btn-outline-danger">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="card mx-auto w-75 border-0 shadow-lg my-2"
+        data-bs-theme="dark">
+        <div class="card-header cardStyle border-bottom border-warning">
+          <i class="bi bi-people text-warning"></i>
+          <span>Etiquetas Registradas </span>
+        </div>
+        <div class="card-body cardStyle">
+          <div class="table-responsive">
+            <table class="table table-striped table-hover text-center">
+              <thead class="border-bottom border-warning">
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Descripcion</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="align-text-bottom">
+                  <th scope="row">1A</th>
+                  <td>AMD</td>
+                  <td>...</td>
+                  <td>
+                    <button
+                      type="button"
+                      id="buttonEditUser"
+                      class="btn btn-outline-warning">
+                      <i class="bi bi-pencil-square"></i>
+                      <span>Editar</span>
+                    </button>
+                    <button
+                      type="button"
+                      id="buttonDeleteUser"
+                      class="btn btn-outline-danger">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="align-text-bottom">
+                  <th scope="row">1B</th>
+                  <td>Intel</td>
+                  <td>...</td>
+                  <td>
+                    <button
+                      type="button"
+                      id="buttonEditUser"
+                      class="btn btn-outline-warning">
+                      <i class="bi bi-pencil-square"></i>
+                      <span>Editar</span>
+                    </button>
+                    <button
+                      type="button"
+                      id="buttonDeleteUser"
+                      class="btn btn-outline-danger">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </main>

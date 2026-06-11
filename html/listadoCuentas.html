@@ -143,6 +143,107 @@
     </nav>
 
     <main class="my-2">
+      <!-- Ventana Modal de Edicion de Usuario -->
+      <div
+        class="modal fade"
+        id="modalEdicionUsuario"
+        tabindex="-1"
+        aria-labelledby="modalEdicionUsuarioLabel"
+        aria-hidden="true"
+        data-bs-theme="dark">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header border-bottom border-warning">
+              <i class="bi bi-bookmark text-warning fs-5 me-2"></i>
+              <h1 class="modal-title fs-5" id="modalEdicionUsuarioLabel">
+                Editar Usuario
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+              <form class="formEdicionUsuario">
+                <div class="input-group my-2 w-75 pb-2 mx-auto">
+                  <span
+                    class="input-group-text rounded-start-pill text-warning border-warning-subtle"
+                    id="basic-addon-username">
+                    <i class="bi bi-person"></i>
+                  </span>
+
+                  <input
+                    type="text"
+                    id="input_register_username"
+                    class="form-control rounded-end-pill text-white border-warning-subtle"
+                    placeholder="Nombre de usuario"
+                    aria-label="Nombre de usuario"
+                    aria-describedby="basic-addon-username" />
+                </div>
+
+                <div class="input-group my-2 w-75 pb-2 mx-auto">
+                  <span
+                    class="input-group-text rounded-start-pill text-warning border-warning-subtle"
+                    id="basic-addon-email">
+                    <i class="bi bi-envelope"></i>
+                  </span>
+
+                  <input
+                    type="email"
+                    id="input_register_email"
+                    class="form-control rounded-end-pill text-white border-warning-subtle"
+                    placeholder="Email"
+                    aria-label="Email"
+                    aria-describedby="basic-addon-email" />
+                </div>
+
+                <div class="input-group my-2 w-75 pb-2 mx-auto">
+                  <span
+                    class="input-group-text rounded-start-pill text-warning border-warning-subtle"
+                    id="basic-addon-telephone">
+                    <i class="bi bi-telephone"></i>
+                  </span>
+
+                  <input
+                    type="tel"
+                    id="input_register_telefono"
+                    class="form-control rounded-end-pill text-white border-warning-subtle"
+                    placeholder="Telefono"
+                    aria-label="Telefono"
+                    aria-describedby="basic-addon-telephone" />
+                </div>
+
+                <div class="input-group my-2 w-75 pb-2 mx-auto">
+                  <span
+                    class="input-group-text rounded-start-pill text-warning border-warning-subtle"
+                    id="basic-addon-password">
+                    <i class="bi bi-lock-fill"></i>
+                  </span>
+                  <input
+                    type="password"
+                    id="input_register_Password"
+                    class="form-control rounded-end-pill text-white border-warning-subtle"
+                    placeholder="Contraseña"
+                    aria-label="Contraseña"
+                    aria-describedby="basic-addon-password" />
+                </div>
+
+                <div class="d-grid my-4 w-75 mx-auto">
+                  <button
+                    class="btn btn-outline-warning rounded-5"
+                    type="submit">
+                    Guardar usuario
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabla de Usuarios -->
       <div class="card mx-auto w-75 border-0 shadow-lg" data-bs-theme="dark">
         <div class="card-header cardStyle border-bottom border-warning">
           <i class="bi bi-people text-warning"></i>
@@ -170,7 +271,9 @@
                     <button
                       type="button"
                       id="buttonEditUser"
-                      class="btn btn-outline-warning">
+                      class="btn btn-outline-warning"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalEdicionUsuario">
                       <i class="bi bi-pencil-square"></i>
                     </button>
                     <button
@@ -190,7 +293,9 @@
                     <button
                       type="button"
                       id="buttonEditUser"
-                      class="btn btn-outline-warning">
+                      class="btn btn-outline-warning"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalEdicionUsuario">
                       <i class="bi bi-pencil-square"></i>
                     </button>
                     <button
@@ -210,7 +315,9 @@
                     <button
                       type="button"
                       id="buttonEditUser"
-                      class="btn btn-outline-warning">
+                      class="btn btn-outline-warning"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalEdicionUsuario">
                       <i class="bi bi-pencil-square"></i>
                     </button>
                     <button
@@ -230,7 +337,9 @@
                     <button
                       type="button"
                       id="buttonEditUser"
-                      class="btn btn-outline-warning">
+                      class="btn btn-outline-warning"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalEdicionUsuario">
                       <i class="bi bi-pencil-square"></i>
                     </button>
                     <button
@@ -250,7 +359,9 @@
                     <button
                       type="button"
                       id="buttonEditUser"
-                      class="btn btn-outline-warning">
+                      class="btn btn-outline-warning"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalEdicionUsuario">
                       <i class="bi bi-pencil-square"></i>
                     </button>
                     <button
@@ -270,7 +381,9 @@
                     <button
                       type="button"
                       id="buttonEditUser"
-                      class="btn btn-outline-warning">
+                      class="btn btn-outline-warning"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalEdicionUsuario">
                       <i class="bi bi-pencil-square"></i>
                     </button>
                     <button
@@ -290,7 +403,9 @@
                     <button
                       type="button"
                       id="buttonEditUser"
-                      class="btn btn-outline-warning">
+                      class="btn btn-outline-warning"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalEdicionUsuario">
                       <i class="bi bi-pencil-square"></i>
                     </button>
                     <button
@@ -310,7 +425,9 @@
                     <button
                       type="button"
                       id="buttonEditUser"
-                      class="btn btn-outline-warning">
+                      class="btn btn-outline-warning"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalEdicionUsuario">
                       <i class="bi bi-pencil-square"></i>
                     </button>
                     <button
@@ -330,7 +447,9 @@
                     <button
                       type="button"
                       id="buttonEditUser"
-                      class="btn btn-outline-warning">
+                      class="btn btn-outline-warning"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalEdicionUsuario">
                       <i class="bi bi-pencil-square"></i>
                     </button>
                     <button
@@ -350,7 +469,9 @@
                     <button
                       type="button"
                       id="buttonEditUser"
-                      class="btn btn-outline-warning">
+                      class="btn btn-outline-warning"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalEdicionUsuario">
                       <i class="bi bi-pencil-square"></i>
                     </button>
                     <button

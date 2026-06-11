@@ -180,7 +180,7 @@
                 </span>
                 <input
                   type="text"
-                  id="input_name"
+                  id="inputNameCrearCategoria"
                   class="form-control rounded-end-pill text-white border-warning-subtle"
                   placeholder="Nombre"
                   aria-label="Nombre" />
@@ -193,7 +193,7 @@
                 </span>
                 <textarea
                   class="form-control border-warning-subtle"
-                  id="descrpcion"
+                  id="inputDescripcionCrearCategoria"
                   placeholder="Descripción"
                   aria-label="Descripción"></textarea>
               </div>
@@ -265,7 +265,7 @@
                         </span>
                         <input
                           type="text"
-                          id="input_name"
+                          id="inputNameCrearEtiqueta"
                           class="form-control rounded-end-pill text-white border-warning-subtle"
                           placeholder="Nombre"
                           aria-label="Nombre"
@@ -279,7 +279,7 @@
                         </span>
                         <textarea
                           class="form-control border-warning-subtle"
-                          id="descrpcion"
+                          id="inputDescripcionCrearEtiqueta"
                           placeholder="Descripción"
                           aria-label="Descripción"
                           aria-describedby="basic-addon-descrip"></textarea>
@@ -306,7 +306,7 @@
                     <span>Editar Etiqueta</span>
                   </div>
                   <div class="card-body cardStyle">
-                    <form id="formEditarEtiqueta">
+                    <form id="formEdicionEtiqueta">
                       <div class="input-group my-2 w-75 pb-2 mx-auto">
                         <span
                           class="input-group-text rounded-start-pill text-warning border-warning-subtle"
@@ -315,7 +315,7 @@
                         </span>
                         <input
                           type="text"
-                          id="input_name"
+                          id="inputNameEdicionEtiqueta"
                           class="form-control rounded-end-pill text-white border-warning-subtle"
                           placeholder="Nombre"
                           aria-label="Nombre"
@@ -329,7 +329,7 @@
                         </span>
                         <textarea
                           class="form-control border-warning-subtle"
-                          id="descrpcion"
+                          id="inputDescripcionEdicionCategoria"
                           placeholder="Descripción"
                           aria-label="Descripción"
                           aria-describedby="basic-addon-descrip"></textarea>
@@ -356,7 +356,7 @@
                       <th scope="col">Acciones</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody id="tbodyEtiquetas">
                     <tr class="align-text-bottom">
                       <th scope="row">1A</th>
                       <td>AMD</td>
@@ -364,7 +364,7 @@
                       <td>
                         <button
                           type="button"
-                          id="buttonEditUser"
+                          id="buttonEditEtiqueta"
                           class="btn btn-outline-warning"
                           data-bs-toggle="collapse"
                           data-bs-target="#collapseEditarEtiqueta"
@@ -388,7 +388,7 @@
                       <td>
                         <button
                           type="button"
-                          id="buttonEditUser"
+                          id="buttonEditEtiqueta"
                           class="btn btn-outline-warning"
                           data-bs-toggle="collapse"
                           data-bs-target="#collapseEditarEtiqueta"
@@ -436,7 +436,7 @@
             </div>
 
             <div class="modal-body">
-              <form class="formAltaUsuario">
+              <form class="formEdicionCategoria">
                 <div class="input-group my-2 w-75 pb-2 mx-auto">
                   <span
                     class="input-group-text rounded-start-pill text-warning border-warning-subtle"
@@ -445,7 +445,7 @@
                   </span>
                   <input
                     type="text"
-                    id="input_name"
+                    id="inputNameEdicionCategoria"
                     class="form-control rounded-end-pill text-white border-warning-subtle"
                     placeholder="Nombre"
                     aria-label="Nombre"
@@ -459,7 +459,7 @@
                   </span>
                   <textarea
                     class="form-control border-warning-subtle"
-                    id="descrpcion"
+                    id="inputDescripcionEdicionCategoria"
                     placeholder="Descripción"
                     aria-label="Descripción"
                     aria-describedby="basic-addon-descrip"></textarea>
@@ -496,7 +496,7 @@
                   <th scope="col">Acciones</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="tbodyCategorias">
                 <tr class="align-text-bottom">
                   <th scope="row">1</th>
                   <td>Procesadores</td>

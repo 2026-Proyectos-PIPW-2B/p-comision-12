@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tienda Web: Inicio de Sesion</title>
+    <title>Tienda Web: Alta de producto</title>
     <link
       rel="shortcut icon"
       href="../img/favicon-yellow-pc-96.png"
@@ -73,8 +73,8 @@
                 class="order-md-2 w-100 w-md-autoorder-md-1 d-flex flex-column-reverse flex-md-row-reverse flex-nowrap gap-2 w-md-auto">
                 <a
                   id="linkIniciarSesion"
-                  class="btn rounded-pill btn-warning text-nowrap my-1"
-                  href="#"
+                  class="btn rounded-pill btn-outline-warning text-nowrap my-1"
+                  href="../html/inicioSesion.html"
                   role="button">
                   <i class="bi bi-door-open-fill"></i>
                   <span>Iniciar Sesión</span>
@@ -113,16 +113,28 @@
                     </h5>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Alta de Usuarios</a>
+                    <a class="dropdown-item" href="../html/crear_cuenta.html"
+                      >Alta de Usuarios</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Usuarios Registrados</a>
+                    <a class="dropdown-item" href="../html/listadoCuentas.html"
+                      >Usuarios Registrados</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Catálogo de Productos</a>
+                    <a
+                      class="dropdown-item text-warning"
+                      href="../html/alta_producto.html"
+                      >Catálogo de Productos</a
+                    >
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Etiquetas/Categorías</a>
+                    <a
+                      class="dropdown-item"
+                      href="../html/creacion_etiquetas.html"
+                      >Categorías/Etiquetas</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -135,42 +147,91 @@
     <main class="my-2">
       <div class="card mx-auto w-50 border-0 shadow-lg" data-bs-theme="dark">
         <div class="card-header cardStyle border-bottom border-warning">
-          <i class="bi bi-door-open text-warning"></i>
-          <span>Inicio de Sesion</span>
+          <i class="bi bi-bag-plus text-warning"></i>
+          <span>Alta de producto</span>
         </div>
         <div class="card-body cardStyle">
           <form class="formAltaUsuario">
             <div class="input-group my-2 w-75 mx-auto">
               <span
                 class="input-group-text rounded-start-pill text-warning border-warning-subtle"
-                id="basic-addon-username">
-                <i class="bi bi-person"></i>
+                id="basic-addon-name-product">
+                <i class="bi bi-pencil"></i>
               </span>
               <input
                 type="text"
-                id="inputUsername"
+                id="input_nombre_producto"
                 class="form-control rounded-end-pill text-white border-warning-subtle"
-                placeholder="Usuario"
-                aria-label="Usuario"
-                aria-describedby="basic-addon-username" />
+                placeholder="Nombre del producto"
+                aria-label="Nombre del producto"
+                aria-describedby="basic-addon-name-product" />
             </div>
+
             <div class="input-group my-2 w-75 mx-auto">
               <span
                 class="input-group-text rounded-start-pill text-warning border-warning-subtle"
-                id="basic-addon-password">
-                <i class="bi bi-key"></i>
+                id="basic-addon-precio">
+                <i class="bi bi-currency-dollar"></i>
               </span>
               <input
-                type="password"
-                id="inputPassword"
+                type="number"
+                id="input_precio"
                 class="form-control rounded-end-pill text-white border-warning-subtle"
-                placeholder="Contraseña"
-                aria-label="Contraseña"
-                aria-describedby="basic-addon-password" />
+                placeholder="Precio"
+                aria-label="Precio"
+                aria-describedby="basic-addon-precio" />
             </div>
+
+            <div class="input-group my-2 w-75 mx-auto">
+              <span
+                class="input-group-text rounded-start-pill text-warning border-warning-subtle"
+                id="basic-addon-stock">
+                <i class="bi bi-box-seam"></i>
+              </span>
+              <input
+                type="number"
+                id="input_stock"
+                class="form-control rounded-end-pill text-white border-warning-subtle"
+                placeholder="Cantidad de stock"
+                aria-label="stock"
+                aria-describedby="basic-addon-stock" />
+            </div>
+
+            <div class="input-group my-2 w-75 pb-2 mx-auto">
+              <span
+                class="input-group-text rounded-start-pill text-warning border-warning-subtle">
+                <i class="bi bi-images"></i>
+              </span>
+              <select
+                name="tipo"
+                id="tipo"
+                class="form-select rounded-end-pill text-white border-warning-subtle">
+                <option value="Seleccionar" disabled selected hidden>
+                  Seleccionar tipo
+                </option>
+                <option value="img1">imagen 1</option>
+                <option value="img2">imagen 2</option>
+              </select>
+            </div>
+
+            <div class="input-group my-2 w-75 mx-auto">
+              <span
+                class="input-group-text text-warning border-warning-subtle"
+                id="basic-addon-description">
+                <i class="bi bi-file-text"></i>
+              </span>
+              <textarea
+                class="form-control text-white border-warning-subtle"
+                id="input_descripcion"
+                rows="3"
+                placeholder="Descripcion"
+                aria-label="Descripcion"
+                aria-describedby="basic-addon-description"></textarea>
+            </div>
+
             <div class="d-grid my-4 w-75 mx-auto">
               <button class="btn btn-outline-warning" type="submit">
-                Ingresar
+                Crear producto
               </button>
             </div>
           </form>

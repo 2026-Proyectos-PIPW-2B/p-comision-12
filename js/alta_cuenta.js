@@ -54,14 +54,14 @@ function datos_validos(){
     }
 
     if (!validator.isMobilePhone(telefono.value, "es-AR")) {
-        mostrar_error(telefono, "error_telefono", "numero de telefono invalido")
+        mostrar_error(telefono, "error_telefono", "Numero de telefono invalido")
         formulario_valido = false
     } else {
         mostrar_exito(telefono)
     }
 
     if (!validator.isStrongPassword(password.value, {minLength: 8, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 0})) {
-        mostrar_error(password, "error_password", "Contraseña invalida")
+        mostrar_error(password, "error_password", "La contraseña debe tener al menos 8 letras, 1 minuscula,1 mayuscula, 1 numero y 1 simbolo ")
         formulario_valido = false
     } else {
         mostrar_exito(password)

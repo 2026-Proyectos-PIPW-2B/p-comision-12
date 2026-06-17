@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tienda Web: Inicio de Sesion</title>
+    <title>Tienda Web: Carrito</title>
     <link
       rel="shortcut icon"
       href="../img/favicon-yellow-pc-96.png"
@@ -73,16 +73,16 @@
                 class="order-md-2 w-100 w-md-autoorder-md-1 d-flex flex-column-reverse flex-md-row-reverse flex-nowrap gap-2 w-md-auto">
                 <a
                   id="linkIniciarSesion"
-                  class="btn rounded-pill btn-warning text-nowrap my-1"
-                  href="#"
+                  class="btn rounded-pill btn-outline-warning text-nowrap my-1"
+                  href="../html/inicioSesion.html"
                   role="button">
                   <i class="bi bi-door-open-fill"></i>
                   <span>Iniciar Sesión</span>
                 </a>
                 <a
                   id="linkCarrito"
-                  class="btn rounded-pill btn-outline-warning text-nowrap my-1"
-                  href="../html/carrito.html"
+                  class="btn rounded-pill btn-warning text-nowrap my-1"
+                  href="#"
                   role="button">
                   <i class="bi bi-cart-fill"></i>
                   <span>Carrito</span>
@@ -131,7 +131,7 @@
                     <a
                       class="dropdown-item"
                       href="../html/creacion_etiquetas.html"
-                      >Categorías/Etiquetas</a
+                      >Etiquetas/Categorías</a
                     >
                   </li>
                 </ul>
@@ -143,47 +143,119 @@
     </nav>
 
     <main class="my-2">
-      <div class="card mx-auto w-50 border-0 shadow-lg" data-bs-theme="dark">
-        <div class="card-header cardStyle border-bottom border-warning">
-          <i class="bi bi-door-open text-warning"></i>
-          <span>Inicio de Sesion</span>
+      <section>
+        <div
+          class="card mx-auto col-12 col-sm-11 col-md-10 col-lg-8 col-xl-6 border-0 shadow-lg"
+          data-bs-theme="dark">
+          <div class="card-header mb-2 cardStyle border-bottom border-warning">
+            <i class="bi bi-cart text-warning"></i>
+            <span>Carrito</span>
+          </div>
+
+          <div class="border-0 m-2">
+            <div class="border-bottom border-warning pb-2">
+              <div class="row g-0">
+                <div class="col-12 col-sm-4">
+                  <img
+                    src="../img/products/laptop-computer-isolated-on-white-background.jpg"
+                    class="img-fluid rounded-3 h-100 object-fit-cover"
+                    alt="Imagen de prueba" />
+                </div>
+
+                <div class="col-12 col-sm-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Producto</h5>
+
+                    <p class="card-text">
+                      Una breve descripcion de prueba para la carta del producto
+                      en el catalogo.
+                    </p>
+
+                    <div
+                      class="d-flex flex-column flex-md-row align-items-start align-items-md-center col-12 col-md-8">
+                      <button
+                        id="buttonProductCardTest02"
+                        class="btn btn-outline-warning rounded-pill"
+                        type="button">
+                        <i class="bi bi-trash"></i>
+                      </button>
+
+                      <div
+                        class="d-flex align-items-center ms-0 ms-md-3 mt-2 mt-md-0 cantidad">
+                        <input
+                          id="inputNumberProductCardTest02"
+                          class="form-control border-warning-subtle rounded-pill text-center flex-shrink-0 col-4 col-md-3"
+                          type="number"
+                          placeholder="1"
+                          aria-label="Cantidad de Productos" />
+
+                        <p class="mb-0 ms-3 fs-3">$1.200.000</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-0 m-2">
+            <div class="border-bottom border-warning pb-2">
+              <div class="row g-0">
+                <div class="col-12 col-sm-4">
+                  <img
+                    src="../img/products/laptop-computer-isolated-on-white-background.jpg"
+                    class="img-fluid rounded-3 h-100 object-fit-cover"
+                    alt="Imagen de prueba" />
+                </div>
+
+                <div class="col-12 col-sm-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Producto</h5>
+
+                    <p class="card-text">
+                      Una breve descripcion de prueba para la carta del producto
+                      en el catalogo.
+                    </p>
+
+                    <div
+                      class="d-flex flex-column flex-md-row align-items-start align-items-md-center col-12 col-md-8">
+                      <button
+                        id="buttonProductCardTest02"
+                        class="btn btn-outline-warning rounded-pill"
+                        type="button">
+                        <i class="bi bi-trash"></i>
+                      </button>
+
+                      <div
+                        class="d-flex align-items-center ms-0 ms-md-3 mt-2 mt-md-0 cantidad">
+                        <input
+                          id="inputNumberProductCardTest02"
+                          class="form-control border-warning-subtle rounded-pill text-center flex-shrink-0 col-4 col-md-3"
+                          type="number"
+                          placeholder="1"
+                          aria-label="Cantidad de Productos" />
+
+                        <p class="mb-0 ms-3 fs-3">$1.200.000</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="card-body cardStyle">
-          <form class="formAltaUsuario">
-            <div class="input-group my-2 w-75 mx-auto">
-              <span
-                class="input-group-text rounded-start-pill text-warning border-warning-subtle"
-                id="basic-addon-username">
-                <i class="bi bi-person"></i>
-              </span>
-              <input
-                type="text"
-                id="inputUsername"
-                class="form-control rounded-end-pill text-white border-warning-subtle"
-                placeholder="Usuario"
-                aria-label="Usuario"
-                aria-describedby="basic-addon-username" />
+      </section>
+
+      <div class="col-12 col-sm-11 col-md-10 col-lg-6 pt-3 mx-auto">
+        <div class="card border-0 shadow-lg sticky-top" data-bs-theme="dark">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h4 id="total">Total:</h4>
+              <h3 class="text-warning">$</h3>
             </div>
-            <div class="input-group my-2 w-75 mx-auto">
-              <span
-                class="input-group-text rounded-start-pill text-warning border-warning-subtle"
-                id="basic-addon-password">
-                <i class="bi bi-key"></i>
-              </span>
-              <input
-                type="password"
-                id="inputPassword"
-                class="form-control rounded-end-pill text-white border-warning-subtle"
-                placeholder="Contraseña"
-                aria-label="Contraseña"
-                aria-describedby="basic-addon-password" />
-            </div>
-            <div class="d-grid my-4 w-75 mx-auto">
-              <button class="btn btn-outline-warning" type="submit">
-                Ingresar
-              </button>
-            </div>
-          </form>
+
+            <button class="btn btn-warning w-100 mt-3">Finalizar compra</button>
+          </div>
         </div>
       </div>
     </main>

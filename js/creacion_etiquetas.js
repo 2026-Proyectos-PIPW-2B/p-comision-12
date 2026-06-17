@@ -84,7 +84,7 @@ function validarDatos(inputNombre, inputDescripcion) {
   return validacion;
 }
 
-function mostrarMensaje(input, validacion) {
+function mostrarMensaje(input, validacion, idInvalidFeedback, mensajeError) {
   if (validacion) {
     input.classList.remove("is-invalid");
     input.classList.add("is-valid");
@@ -100,8 +100,10 @@ function validarNombre(inputNombre) {
 
   if (validator.isEmpty(inputNombre.value.trim())) {
     validacion = false;
+    mensaje = "Debe indicar un nombre";
   } else if (!validator.isLength(inputNombre.value.trim(), { min: 3 })) {
     validacion = false;
+    mensaje = "Debe ingresar al menos 3 caracteres";
   }
 
   mostrarMensaje(inputNombre, validacion);

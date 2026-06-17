@@ -186,7 +186,7 @@
           </div>
 
           <div class="card-body cardStyle" data-bs-theme="dark">
-            <form id="formCrearCategoria">
+            <form id="formCrearCategoria" novalidate>
               <div class="input-group my-2 w-75 pb-2 mx-auto">
                 <span
                   class="input-group-text rounded-start-pill text-warning border-warning-subtle"
@@ -198,7 +198,8 @@
                   id="inputNameCrearCategoria"
                   class="form-control rounded-end-pill text-white border-warning-subtle"
                   placeholder="Nombre"
-                  aria-label="Nombre" />
+                  aria-label="Nombre" 
+                  required/>
               </div>
               <div class="input-group my-2 w-75 pb-2 mx-auto">
                 <span
@@ -210,7 +211,8 @@
                   class="form-control border-warning-subtle"
                   id="inputDescripcionCrearCategoria"
                   placeholder="Descripción"
-                  aria-label="Descripción"></textarea>
+                  aria-label="Descripción"
+                  required></textarea>
               </div>
 
               <div class="d-grid my-4 w-75 mx-auto">
@@ -233,8 +235,8 @@
             <span>Crear nueva Etiqueta</span>
           </div>
           <div class="card-body cardStyle">
-            <form id="formCrearEtiqueta">
-              <div class="input-group my-2 w-75 pb-2 mx-auto">
+            <form id="formCrearEtiqueta" novalidate>
+              <div class="input-group my-2 w-75 pb-2 mx-auto has-validation">
                 <span
                   class="input-group-text rounded-start-pill text-warning border-warning-subtle"
                   id="basic-addon-name">
@@ -246,9 +248,10 @@
                   class="form-control rounded-end-pill text-white border-warning-subtle"
                   placeholder="Nombre"
                   aria-label="Nombre"
-                  aria-describedby="basic-addon-name" />
+                  aria-describedby="basic-addon-name"
+                  required />
               </div>
-              <div class="input-group my-2 w-75 pb-2 mx-auto">
+              <div class="input-group my-2 w-75 pb-2 mx-auto has-validation">
                 <span
                   class="input-group-text text-warning border-warning-subtle"
                   id="basic-addon-descrip">
@@ -259,7 +262,8 @@
                   id="inputDescripcionCrearEtiqueta"
                   placeholder="Descripción"
                   aria-label="Descripción"
-                  aria-describedby="basic-addon-descrip"></textarea>
+                  aria-describedby="basic-addon-descrip"
+                  required></textarea>
               </div>
 
               <div class="d-grid my-4 w-75 mx-auto">
@@ -296,8 +300,8 @@
             </div>
 
             <div class="modal-body">
-              <form class="formEdicionCategoria">
-                <div class="input-group my-2 w-75 pb-2 mx-auto">
+              <form class="formEdicionCategoria" novalidate>
+                <div class="input-group my-2 w-75 pb-2 mx-auto has-validation">
                   <span
                     class="input-group-text rounded-start-pill text-warning border-warning-subtle"
                     id="basic-addon-name">
@@ -309,9 +313,10 @@
                     class="form-control rounded-end-pill text-white border-warning-subtle"
                     placeholder="Nombre"
                     aria-label="Nombre"
-                    aria-describedby="basic-addon-name" />
+                    aria-describedby="basic-addon-name" 
+                    required/>
                 </div>
-                <div class="input-group my-2 w-75 pb-2 mx-auto">
+                <div class="input-group my-2 w-75 pb-2 mx-auto has-validation">
                   <span
                     class="input-group-text text-warning border-warning-subtle"
                     id="basic-addon-descrip">
@@ -322,11 +327,12 @@
                     id="inputDescripcionEdicionCategoria"
                     placeholder="Descripción"
                     aria-label="Descripción"
-                    aria-describedby="basic-addon-descrip"></textarea>
+                    aria-describedby="basic-addon-descrip"
+                    required></textarea>
                 </div>
 
                 <div class="d-grid my-4 w-75 mx-auto">
-                  <button class="btn btn-warning rounded-5" type="submit">
+                  <button id="buttonEdicionCategoria" class="btn btn-warning rounded-5" type="submit">
                     Guardar Categoria
                   </button>
                 </div>
@@ -359,8 +365,8 @@
             </div>
 
             <div class="modal-body">
-              <form class="formEdicionEtiqueta">
-                <div class="input-group my-2 w-75 pb-2 mx-auto">
+              <form class="formEdicionEtiqueta" novalidate>
+                <div class="input-group my-2 w-75 pb-2 mx-auto has-validation">
                   <span
                     class="input-group-text rounded-start-pill text-warning border-warning-subtle"
                     id="basic-addon-name">
@@ -372,9 +378,10 @@
                     class="form-control rounded-end-pill text-white border-warning-subtle"
                     placeholder="Nombre"
                     aria-label="Nombre"
-                    aria-describedby="basic-addon-name" />
+                    aria-describedby="basic-addon-name" 
+                    required/>
                 </div>
-                <div class="input-group my-2 w-75 pb-2 mx-auto">
+                <div class="input-group my-2 w-75 pb-2 mx-auto has-validation">
                   <span
                     class="input-group-text text-warning border-warning-subtle"
                     id="basic-addon-descrip">
@@ -385,11 +392,12 @@
                     id="inputDescripcionEdicionEtiqueta"
                     placeholder="Descripción"
                     aria-label="Descripción"
-                    aria-describedby="basic-addon-descrip"></textarea>
+                    aria-describedby="basic-addon-descrip"
+                    required></textarea>
                 </div>
 
                 <div class="d-grid my-4 w-75 mx-auto">
-                  <button class="btn btn-warning rounded-5" type="submit">
+                  <button id="buttonEdicionEtiqueta" class="btn btn-warning rounded-5" type="submit">
                     Guardar Etiqueta
                   </button>
                 </div>

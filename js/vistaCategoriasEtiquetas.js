@@ -1,3 +1,6 @@
+import { agregarCategoria } from "../js/gestorCategorias.js";
+import { agregarEtiqueta } from "../js/gestorEtiquetas.js";
+
 // Constantes Form Creacion Categoria
 const formCrearCategoria = document.getElementById("formCrearCategoria");
 const inputNameCrearCategoria = document.getElementById(
@@ -64,10 +67,6 @@ const invalidDescripcionEdicionEtiqueta = document.getElementById(
   "invalidDescripcionEdicionEtiqueta",
 );
 
-// localStorage
-let categorias = JSON.parse(localStorage.getItem("categorias")) || [];
-let etiquetas = JSON.parse(localStorage.getItem("etiquetas")) || [];
-
 window.addEventListener("load", function () {
   inicializarCrearCategoria();
   inicializarCrearEtiqueta();
@@ -89,6 +88,10 @@ function inicializarCrearCategoria() {
         invalidDescripcionCrearCategoria,
       )
     ) {
+      agregarCategoria(
+        inputNameCrearCategoria.value,
+        inputDescripcionCrearCategoria.value,
+      );
       formCrearCategoria.reset();
       limpiarValidacion();
     }
@@ -109,6 +112,10 @@ function inicializarCrearEtiqueta() {
         invalidDescripcionCrearEtiqueta,
       )
     ) {
+      agregarEtiqueta(
+        inputNameCrearEtiqueta.value,
+        inputDescripcionCrearEtiqueta.value,
+      );
       formCrearEtiqueta.reset();
       limpiarValidacion();
     }

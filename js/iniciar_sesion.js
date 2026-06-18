@@ -1,9 +1,35 @@
 let username = document.getElementById("inputUsername")
 let password = document.getElementById("inputPassword")
 
+window.addEventListener("load", function(){
+    inicializar()
+})
+
 let data = localStorage.getItem("cuentas")
 let cuentas = JSON.parse(data)
 
+function inicializar(){
+    const form = document.getElementById("formulario_registro")
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault()
+        
+        limpiar_estados()
+
+        if (validacion()) {
+            alert("Inicio sesion correctamente")
+            form.reset()
+            limpiar_estados()
+        }
+    });
+}
+
+function limpiar_estados() {
+    const inputs = document.querySelectorAll(".form-control")
+    for (const input of inputs) {
+        input.classList.remove("is-invalid")
+    }
+}
 
 function validacion() {
 let usuario = username.value;
@@ -13,7 +39,7 @@ let usuarioEncontrado = false;
 
 for (let i = 0; i < cuentas.length; i++) {
 
-    if (cuentas[i].usename === usuario) {
+    if (cuentas[i].username === usuario) {
         usuarioEncontrado = true;
 
         if (cuentas[i].contraseña === contrasenia) {
@@ -21,18 +47,19 @@ for (let i = 0; i < cuentas.length; i++) {
 
             localStorage.setItem("cuentas",JSON.stringify(cuentas));
 
-            return;
+            return true;
 
         } else {
             mostrar_error(password,"error_inicio_password","La contraseña es incorrecta");
 
-            return;
+            return false;
         }
     }
 }
 
 if (!usuarioEncontrado) {
     mostrar_error(username,"error_inicio_username","El nombre de usuario es incorrecto");
+    return false
 }
 
 }

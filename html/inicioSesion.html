@@ -82,7 +82,7 @@
                 <a
                   id="linkCarrito"
                   class="btn rounded-pill btn-outline-warning text-nowrap my-1"
-                  href="#"
+                  href="../html/carrito.html"
                   role="button">
                   <i class="bi bi-cart-fill"></i>
                   <span>Carrito</span>
@@ -149,7 +149,7 @@
           <span>Inicio de Sesion</span>
         </div>
         <div class="card-body cardStyle">
-          <form class="formAltaUsuario">
+          <form class="formAltaUsuario" id="formulario_inicio_sesion" novalidate>
             <div class="input-group my-2 w-75 mx-auto">
               <span
                 class="input-group-text rounded-start-pill text-warning border-warning-subtle"
@@ -163,6 +163,7 @@
                 placeholder="Usuario"
                 aria-label="Usuario"
                 aria-describedby="basic-addon-username" />
+                <div class="invalid-feedback" id="error_inicio_username"></div>
             </div>
             <div class="input-group my-2 w-75 mx-auto">
               <span
@@ -177,9 +178,11 @@
                 placeholder="Contraseña"
                 aria-label="Contraseña"
                 aria-describedby="basic-addon-password" />
+                <div class="invalid-feedback" id="error_inicio_password"></div>
             </div>
+
             <div class="d-grid my-4 w-75 mx-auto">
-              <button class="btn btn-outline-warning" type="submit">
+              <button class="btn btn-outline-warning" type="submit" id="">
                 Ingresar
               </button>
             </div>
@@ -189,7 +192,7 @@
     </main>
 
     <footer class="my-2"></footer>
-
+    <script src="../js/iniciar_sesion.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
   </body>
 </html>

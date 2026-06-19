@@ -1,5 +1,9 @@
-import { agregarCategoria } from "../js/gestorCategorias.js";
-import { agregarEtiqueta } from "../js/gestorEtiquetas.js";
+import { agregarCategoria, listadoCategorias } from "../js/gestorCategorias.js";
+import { agregarEtiqueta, listadoEtiquetas } from "../js/gestorEtiquetas.js";
+
+// Tablas tBody
+const tbodyCategorias = document.getElementById("tbodyCategorias");
+const tbodyEtiquetas = document.getElementById("tbodyEtiquetas");
 
 // Constantes Form Creacion Categoria
 const formCrearCategoria = document.getElementById("formCrearCategoria");
@@ -67,12 +71,117 @@ const invalidDescripcionEdicionEtiqueta = document.getElementById(
   "invalidDescripcionEdicionEtiqueta",
 );
 
+/*
+  Setea los forms para responder a intentos de submit.
+  Carga las tablas por unica vez.
+*/
 window.addEventListener("load", function () {
   inicializarCrearCategoria();
   inicializarCrearEtiqueta();
   inicializarEdicionCategoria();
   inicializarEdicionEtiqueta();
+
+  cargarTablaCategorias();
+  cargarTablaEtiquetas();
 });
+
+/*
+  Elimina y vuelve a generar la tabla completa.
+*/
+function cargarTablaCategorias() {
+  let categorias = listadoCategorias();
+  tbodyCategorias.innerHTML = "";
+
+  for (let i = 0; i < categorias.length; i++) {
+    const categoria = categorias[i];
+
+    const tr = document.createElement("tr");
+
+    const tdNombre = document.createElement("td");
+    tdNombre.textContent = categoria.nombre;
+
+    const tdDescripcion = document.createElement("td");
+    tdDescripcion.textContent = categoria.descripcion;
+
+    const tdAcciones = document.createElement("td");
+    tdAcciones.appendChild(crearBotonEdicion(categoria.id));
+    tdAcciones.appendChild(crearBotonEliminar(categoria.id));
+
+    tr.appendChild(tdNombre);
+    tr.appendChild(tdDescripcion);
+    tr.appendChild(tdAcciones);
+
+    tbodyCategorias.appendChild(tr);
+  }
+}
+
+/*
+  Elimina y vuelve a generar la tabla completa.
+*/
+function cargarTablaEtiquetas() {
+  let etiquetas = listadoEtiquetas();
+  tbodyEtiquetas.innerHTML = "";
+
+  for (let i = 0; i < etiquetas.length; i++) {
+    const etiqueta = etiquetas[i];
+
+    const tr = document.createElement("tr");
+
+    const tdNombre = document.createElement("td");
+    tdNombre.textContent = etiqueta.nombre;
+
+    const tdDescripcion = document.createElement("td");
+    tdDescripcion.textContent = etiqueta.descripcion;
+
+    const tdAcciones = document.createElement("td");
+    tdAcciones.appendChild(crearBotonEdicion(etiqueta.id));
+    tdAcciones.appendChild(crearBotonEliminar(etiqueta.id));
+
+    tr.appendChild(tdNombre);
+    tr.appendChild(tdDescripcion);
+    tr.appendChild(tdAcciones);
+
+    tbodyEtiquetas.appendChild(tr);
+  }
+}
+
+function crearBotonEdicion(id) {
+  const boton = document.createElement("button");
+
+  boton.id = id;
+  boton.type = "button";
+  boton.className = "btn btn-outline-warning";
+  boton.setAttribute("data-bs-toggle", "modal");
+  boton.setAttribute("data-bs-target", "#modalEdicionCategoria");
+
+  let i = document.createElement("i");
+  i.className = "bi bi-pencil-square";
+
+  let span = document.createElement("span");
+  span.innerHTML = "Editar";
+
+  boton.appendChild(i);
+  boton.appendChild(span);
+
+  return boton;
+}
+
+function crearBotonEliminar(id) {
+  const boton = document.createElement("button");
+
+  boton.id = id;
+  boton.type = "button";
+  boton.className = "btn btn-outline-danger";
+  boton.setAttribute("data-bs-toggle", "modal");
+  boton.setAttribute("data-bs-target", "#modalEdicionCategoria");
+
+  let i = document.createElement("i");
+  i.className = "bi bi-trash";
+
+  boton.appendChild(i);
+
+  return boton;
+}
 
 function inicializarCrearCategoria() {
   formCrearCategoria.addEventListener("submit", function (event) {
@@ -94,6 +203,7 @@ function inicializarCrearCategoria() {
       );
       formCrearCategoria.reset();
       limpiarValidacion();
+      cargarTablaCategorias();
     }
   });
 }
@@ -118,6 +228,7 @@ function inicializarCrearEtiqueta() {
       );
       formCrearEtiqueta.reset();
       limpiarValidacion();
+      cargarTablaEtiquetas();
     }
   });
 }
@@ -138,6 +249,7 @@ function inicializarEdicionCategoria() {
     ) {
       formEdicionCategoria.reset();
       limpiarValidacion();
+      cargarTablaCategorias();
     }
   });
 }
@@ -158,6 +270,7 @@ function inicializarEdicionEtiqueta() {
     ) {
       formEdicionEtiqueta.reset();
       limpiarValidacion();
+      cargarTablaEtiquetas();
     }
   });
 }

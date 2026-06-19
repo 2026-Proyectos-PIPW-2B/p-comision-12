@@ -1,0 +1,1 @@
+let etiquetas = JSON.parse(localStorage.getItem("etiquetas"))

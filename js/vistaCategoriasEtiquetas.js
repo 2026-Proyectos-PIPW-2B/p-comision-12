@@ -1,5 +1,9 @@
-import { agregarCategoria } from "../js/gestorCategorias.js";
-import { agregarEtiqueta } from "../js/gestorEtiquetas.js";
+import { agregarCategoria, listadoCategorias } from "../js/gestorCategorias.js";
+import { agregarEtiqueta, listadoEtiquetas } from "../js/gestorEtiquetas.js";
+
+// Tablas tBody
+const tbodyCategorias = document.getElementById("tbodyCategorias");
+const tbodyEtiquetas = document.getElementById("tbodyEtiquetas");
 
 // Constantes Form Creacion Categoria
 const formCrearCategoria = document.getElementById("formCrearCategoria");
@@ -72,7 +76,79 @@ window.addEventListener("load", function () {
   inicializarCrearEtiqueta();
   inicializarEdicionCategoria();
   inicializarEdicionEtiqueta();
+
+  cargarTablaCategorias();
+  cargarTablaEtiquetas();
 });
+
+function cargarTablaCategorias() {
+  let categorias = listadoCategorias();
+  tbodyCategorias.innerHTML = "";
+
+  for (let i = 0; i < categorias.length; i++) {
+    const categoria = categorias[i];
+
+    const tr = document.createElement("tr");
+
+    const tdNombre = document.createElement("td");
+    tdNombre.textContent = categoria.nombre;
+
+    const tdDescripcion = document.createElement("td");
+    tdDescripcion.textContent = categoria.descripcion;
+
+    const tdAcciones = document.createElement("td");
+    tdAcciones.appendChild(crearBotonEdicion(categoria.id));
+    tdAcciones.appendChild(crearBotonEliminar(categoria.id));
+
+    tr.appendChild(tdNombre);
+    tr.appendChild(tdDescripcion);
+    tr.appendChild(tdAcciones);
+
+    tbodyCategorias.appendChild(tr);
+  }
+}
+
+function cargarTablaEtiquetas() {
+  let etiquetas = listadoEtiquetas();
+}
+
+function crearBotonEdicion(id) {
+  const boton = document.createElement("button");
+
+  boton.id = id;
+  boton.type = "button";
+  boton.className = "btn btn-outline-warning";
+  boton.setAttribute("data-bs-toggle", "modal");
+  boton.setAttribute("data-bs-target", "#modalEdicionCategoria");
+
+  let i = document.createElement("i");
+  i.className = "bi bi-pencil-square";
+
+  let span = document.createElement("span");
+  span.innerHTML = "Editar";
+
+  boton.appendChild(i);
+  boton.appendChild(span);
+
+  return boton;
+}
+
+function crearBotonEliminar(id) {
+  const boton = document.createElement("button");
+
+  boton.id = id;
+  boton.type = "button";
+  boton.className = "btn btn-outline-danger";
+  boton.setAttribute("data-bs-toggle", "modal");
+  boton.setAttribute("data-bs-target", "#modalEdicionCategoria");
+
+  let i = document.createElement("i");
+  i.className = "bi bi-trash";
+
+  boton.appendChild(i);
+
+  return boton;
+}
 
 function inicializarCrearCategoria() {
   formCrearCategoria.addEventListener("submit", function (event) {

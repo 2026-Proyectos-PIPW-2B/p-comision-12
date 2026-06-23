@@ -47,11 +47,7 @@ export function listadoEtiquetas() {
 }
 
 export function conseguirEtiqueta(id) {
-  const etiquetas =
-    JSON.parse(localStorage.getItem(claveEtiquetas)) || etiquetasTemplate;
-  return;
-  const index = etiquetas.findIndex((etiqueta) => etiqueta.id === id);
-  return etiquetas[index];
+  return etiquetas.find((eti) => eti.id === id) || null;
 }
 
 function crearEtiqueta(nombre, descripcion) {

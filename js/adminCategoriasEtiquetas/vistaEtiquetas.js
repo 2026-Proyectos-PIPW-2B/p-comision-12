@@ -84,10 +84,10 @@ function inicializarEdicionEtiqueta() {
   modalEdicionEtiqueta.addEventListener("shown.bs.modal", function (event) {
     const boton = event.relatedTarget;
     const id = boton.getAttribute("data-identificador");
-    const categoria = conseguirCategoria(id);
+    const etiqueta = conseguirEtiqueta(id);
 
-    inputNameEdicionEtiqueta.value = categoria.nombre;
-    inputDescripcionEdicionEtiqueta.value = categoria.descripcion;
+    inputNameEdicionEtiqueta.value = etiqueta.nombre;
+    inputDescripcionEdicionEtiqueta.value = etiqueta.descripcion;
     buttonEdicionEtiqueta.setAttribute("data-identificador", id);
   });
 
@@ -137,7 +137,7 @@ function cargarTablaEtiquetas() {
     tdDescripcion.textContent = etiqueta.descripcion;
 
     const tdAcciones = document.createElement("td");
-    let botonEdicion = crearBotonEdicion("modalEdicionEtiqueta");
+    let botonEdicion = crearBotonEdicion("modalEdicionEtiqueta", etiqueta.id);
     let botonEliminar = crearBotonEliminar();
 
     tdAcciones.appendChild(botonEdicion);
@@ -156,14 +156,14 @@ function cargarTablaEtiquetas() {
   }
 }
 
-function crearBotonEdicion(idModal, idCategoria) {
+function crearBotonEdicion(idModal, idEtiqueta) {
   const boton = document.createElement("button");
 
   boton.type = "button";
   boton.className = "btn btn-outline-warning m-1 text-nowrap";
   boton.setAttribute("data-bs-toggle", "modal");
   boton.setAttribute("data-bs-target", "#" + idModal);
-  boton.setAttribute("data-identificador", idCategoria);
+  boton.setAttribute("data-identificador", idEtiqueta);
 
   let i = document.createElement("i");
   i.className = "bi bi-pencil-square";

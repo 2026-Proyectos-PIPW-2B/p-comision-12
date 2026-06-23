@@ -1,3 +1,4 @@
+let etiquetas;
 const claveEtiquetas = "etiquetas";
 const etiquetasTemplate = [
   { id: crypto.randomUUID(), nombre: "AMD", descripcion: "..." },
@@ -15,51 +16,47 @@ const etiquetasTemplate = [
   { id: crypto.randomUUID(), nombre: "Joystick", descripcion: "..." },
 ];
 
-export function agregarEtiqueta(nombre, descripcion) {
-  let etiquetas =
+window.addEventListener("load", function () {
+  etiquetas =
     JSON.parse(localStorage.getItem(claveEtiquetas)) || etiquetasTemplate;
+});
+
+export function agregarEtiqueta(nombre, descripcion) {
   let etiqueta = crearEtiqueta(nombre, descripcion);
   etiquetas.push(etiqueta);
   localStorage.setItem(claveEtiquetas, JSON.stringify(etiquetas));
 }
 
 export function editarEtiqueta(id, nombre, descripcion) {
-  let etiquetas =
-    JSON.parse(localStorage.getItem(claveEtiquetas)) || etiquetasTemplate;
-  let etiqueta = encontrarEtiquetaPorID(id);
-
-  etiqueta.nombre = nombre;
-  etiqueta.descripcion = descripcion;
-
-  etiquetas.push(etiqueta);
-  localStorage.setItem(claveEtiquetas, JSON.stringify(etiquetas));
+  const index = etiquetas.findIndex((cat) => cat.id === id);
+  if (index !== -1) {
+    etiquetas[index].nombre = nombre;
+    etiquetas[index].descripcion = descripcion;
+    localStorage.setItem(claveEtiquetas, JSON.stringify(etiquetas));
+  }
 }
 
 export function eliminarEtiqueta(id) {
-  let etiquetas =
-    JSON.parse(localStorage.getItem(claveEtiquetas)) || etiquetasTemplate;
-  let etiqueta = encontrarEtiquetaPorID(id);
-
-  etiquetas = etiquetas.filter((e) => e.id !== id);
+  etiquetas = etiquetas.filter((etiEncontrada) => etiEncontrada.id !== id);
 
   localStorage.setItem(claveEtiquetas, JSON.stringify(etiquetas));
 }
 
 export function listadoEtiquetas() {
-  let etiquetas =
-    JSON.parse(localStorage.getItem(claveEtiquetas)) || etiquetasTemplate;
   return etiquetas;
 }
 
-function encontrarEtiquetaPorID(id) {
+export function conseguirEtiqueta(id) {
   const etiquetas =
     JSON.parse(localStorage.getItem(claveEtiquetas)) || etiquetasTemplate;
-  return etiquetas.findIndex((etiqueta) => etiqueta.id === id);
+  return;
+  const index = etiquetas.findIndex((etiqueta) => etiqueta.id === id);
+  return etiquetas[index];
 }
 
 function crearEtiqueta(nombre, descripcion) {
   let etiqueta = {
-    id: Date.now(),
+    id: crypto.randomUUID(),
     nombre: nombre,
     descripcion: descripcion,
   };

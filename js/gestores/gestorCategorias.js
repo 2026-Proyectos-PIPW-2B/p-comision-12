@@ -1,3 +1,4 @@
+let categorias;
 const claveCategorias = "categorias";
 const categoriasTemplate = [
   { id: crypto.randomUUID(), nombre: "Procesadores", descripcion: "..." },
@@ -10,51 +11,43 @@ const categoriasTemplate = [
   { id: crypto.randomUUID(), nombre: "Perifericos", descripcion: "..." },
 ];
 
-export function agregarCategoria(nombre, descripcion) {
-  let categorias =
+window.addEventListener("load", function () {
+  categorias =
     JSON.parse(localStorage.getItem(claveCategorias)) || categoriasTemplate;
+});
+
+export function agregarCategoria(nombre, descripcion) {
   let categoria = crearCategoria(nombre, descripcion);
   categorias.push(categoria);
   localStorage.setItem(claveCategorias, JSON.stringify(categorias));
 }
 
 export function editarCategoria(id, nombre, descripcion) {
-  let categorias =
-    JSON.parse(localStorage.getItem(claveCategorias)) || categoriasTemplate;
-  let categoria = encontrarEtiquetaPorID(id);
-
-  categoria.nombre = nombre;
-  categoria.descripcion = descripcion;
-
-  categorias.push(categoria);
-  localStorage.setItem(claveCategorias, JSON.stringify(categorias));
+  const index = categorias.findIndex((cat) => cat.id === id);
+  if (index !== -1) {
+    categorias[index].nombre = nombre;
+    categorias[index].descripcion = descripcion;
+    localStorage.setItem(claveCategorias, JSON.stringify(categorias));
+  }
 }
 
 export function eliminarCategoria(id) {
-  let categorias =
-    JSON.parse(localStorage.getItem(claveCategorias)) || categoriasTemplate;
-  let categoria = encontrarCategoriaPorID(id);
-
-  categorias = categorias.filter((e) => e.id !== id);
+  categorias = categorias.filter((catEncontrada) => catEncontrada.id !== id);
 
   localStorage.setItem(claveCategorias, JSON.stringify(categorias));
 }
 
 export function listadoCategorias() {
-  let categorias =
-    JSON.parse(localStorage.getItem(claveCategorias)) || categoriasTemplate;
   return categorias;
 }
 
-function encontrarCategoriaPorID(id) {
-  const categorias =
-    JSON.parse(localStorage.getItem(claveCategorias)) || categoriasTemplate;
-  return categorias.findIndex((categoria) => categoria.id === id);
+export function conseguirCategoria(id) {
+  return categorias.find((cat) => cat.id === id) || null;
 }
 
 function crearCategoria(nombre, descripcion) {
   let categoria = {
-    id: Date.now(),
+    id: crypto.randomUUID(),
     nombre: nombre,
     descripcion: descripcion,
   };

@@ -1,5 +1,20 @@
-let etiquetas = JSON.parse(localStorage.getItem("etiquetas"))|| [];
-let categorias = JSON.parse(localStorage.getItem("categorias"))|| [];
+import {
+    listadoCategorias,
+    conseguirCategoria,
+} from "../gestores/gestorCategorias.js";
+
+import {
+    listadoEtiquetas,
+    conseguirEtiqueta,
+} from "../gestores/gestorEtiquetas.js";
+
+let categorias = [];
+let etiquetas = [];
+
+window.addEventListener("load", function () {
+    categorias = listadoCategorias();
+    etiquetas = listadoEtiquetas();
+});
 
 export function cargar_categorias() {
 

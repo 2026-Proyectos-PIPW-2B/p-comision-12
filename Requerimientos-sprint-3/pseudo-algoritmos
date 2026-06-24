@@ -1,0 +1,94 @@
+— Gestor Productos/Catalogo —
+agregarProducto(); 
+editarProducto();
+eliminarProducto(); 
+listado();
+conseguirProducto(id);
+
+Producto = {
+	id,
+        nombre,
+        precio,
+        stock,
+        img,
+        categoria,
+        etiquetas,
+     descripcion
+} 
+catalogo = [idProducto1, idProducto2]
+
+— VistaCarrito —
+confirmarCarrito { limpiarCarrito(); agregarPedido() }
+
+— Gestor Carrito —
+agregarProductoCarrito(idProducto, cantidad); 
+eliminarProductoCarrito(id); 
+editarCantidadProducto(id, cantidad);
+limpiarCarrito();
+
+Producto_en_carrito = { 
+	Id,
+	idProducto, 
+	cantidad,
+	subtotal_producto,
+}
+
+carrito = [ Producto_en_carrito1, Producto_en_carrito2]
+
+— Gestor Pedidos —
+agregarPedido(carrito);
+
+Pedido = {
+	Id,
+	idUsuario,
+	Carrito,
+}
+
+Pedidos = [Pedido1, Pedido2]
+
+------------------------
+
+— Gestor Cuentas — (Alta Usuario)
+agregarCuenta(); 
+eliminarCuenta(); 
+editarCuenta();
+listadoCuentas();
+conseguirCuenta(id);
+conseguirCuenta(usuario, contrasena);
+
+- Inicio Sesion Vista -
+validarInicioSesion() { 
+	listadoCuentas() o conseguirCuenta(usuario, contrasena);
+	guardarSesion();
+}
+
+- Barra Navegacion Boton Sesion -
+
+inicializacion() {
+	manejarBotonInicioCerradoSesion()
+}
+
+manejarBotonInicioCerradoSesion() {
+	if consultarSesion() {
+		mostrarBotonCerrarSesion();
+	}
+	else {
+		mostrarBotonInicioSesion();
+	}
+}
+iniciarSesion();
+
+cerrarSesion();
+
+
+
+- Gestor Sesion - 
+
+guardarSesion(id);
+cerrarSesion();
+consultarSesion(); (devuevle true o false dependiendo de si hay sesion iniciada)
+conseguirUsuarioIniciado(); (devuelve el id del usuario)
+
+datos que guarda en localStorage:
+let haySesionIniciada; (true o false)
+let idCuenta;

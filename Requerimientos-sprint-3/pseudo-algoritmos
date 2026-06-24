@@ -70,14 +70,11 @@ inicializacion() {
 
 manejarBotonInicioCerradoSesion() {
 	if consultarSesion() {
-		mostrarBotonCerrarSesion();
+		//Cambiar texto del span del boton a Cerrar Sesion
 	}
-	else {
-		mostrarBotonInicioSesion();
-	}
-}
-iniciarSesion();
+};
 
+iniciarSesion();
 cerrarSesion();
 
 

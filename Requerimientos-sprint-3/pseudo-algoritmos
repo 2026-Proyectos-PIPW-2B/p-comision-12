@@ -14,7 +14,12 @@ Producto = {
         categoria,
         etiquetas,
      descripcion
-} 
+}
+
+
+
+- Vista Catalogo -
+
 catalogo = [idProducto1, idProducto2]
 
 — VistaCarrito —

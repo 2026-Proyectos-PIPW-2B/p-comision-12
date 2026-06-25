@@ -2,7 +2,7 @@
 agregarProducto(); 
 editarProducto();
 eliminarProducto(); 
-listado();
+listadoActivos();
 conseguirProducto(id);
 
 Producto = {

@@ -123,10 +123,8 @@
                     >
                   </li>
                   <li>
-                    <a
-                      class="dropdown-item text-warning"
-                      href="../html/alta_producto.html"
-                      >Catálogo de Productos</a
+                    <a class="dropdown-item text-warning" href="#"
+                      >Administracion de Productos</a
                     >
                   </li>
                   <li>
@@ -263,25 +261,28 @@
                   id="error_categoria_producto"></div>
               </div>
 
+              <!-- Boton collapse Editar Etiqueta -->
+              <div class="d-flex justify-content-center">
+                <button
+                  class="btn rounded-pill btn-outline-warning text-nowrap w-50 my-2"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseSeleccionarEtiquetaEnCreacionProducto"
+                  aria-expanded="false"
+                  aria-controls="collapseSeleccionarEtiquetaEnCreacionProducto">
+                  <i class="bi bi-tags text-warning"></i>
+                  <span>Seleccionar Etiquetas</span>
+                </button>
+              </div>
+
+              <!-- Collapse Editar Etiquetas -->
               <div
-                class="input-group my-2 w-75 pb-2 mx-auto justify-content-center">
-                <span
-                  class="input-group-text rounded-start-pill text-warning border-warning-subtle">
-                  <i class="bi bi-tags"></i>
-                </span>
-                <div class="btn-group dropdown-center">
-                  <button
-                    class="btn btn-outline-warning border-warning-subtle rounded-end-pill dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    data-bs-auto-close="outside"
-                    aria-expanded="false">
-                    Seleccionar Etiquetas
-                  </button>
-                  <ul
+                class="collapse"
+                id="collapseSeleccionarEtiquetaEnCreacionProducto">
+                <div class="container text-center mb-3">
+                  <div
                     id="contenedor_de_etiquetas"
-                    class="dropdown-menu bg-black p-3 text-center mb-2"
-                    style="min-width: auto; width: max-content"></ul>
+                    class="row row-cols-4"></div>
                 </div>
               </div>
 
@@ -541,7 +542,7 @@
                   </select>
                 </div>
 
-                <!-- Boton collapse Crear Etiqueta -->
+                <!-- Boton collapse Editar Etiqueta -->
                 <div class="d-flex justify-content-center">
                   <button
                     class="btn rounded-pill btn-outline-warning text-nowrap w-50 my-2"
@@ -555,7 +556,7 @@
                   </button>
                 </div>
 
-                <!-- Collapse Crear Etiqueta -->
+                <!-- Collapse Editar Etiquetas -->
                 <div class="collapse" id="collapseSeleccionarEtiqueta">
                   <div class="container text-center mb-3">
                     <div class="row row-cols-4">
@@ -745,9 +746,8 @@
 
     <script src="../js/bootstrap.bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.15.15/validator.min.js"></script>
-    <script src="../js/alta_producto/crear_producto.js" type="module"></script>
     <script
-      type="module"
-      src="../js/alta_producto/importar_etiquetas_producto.js"></script>
+      src="../js/adminProductos/vistaAdminProductos.js"
+      type="module"></script>
   </body>
 </html>

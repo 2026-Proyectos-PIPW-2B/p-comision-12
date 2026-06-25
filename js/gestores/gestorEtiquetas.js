@@ -4,6 +4,7 @@ const etiquetasTemplate = [
   { id: crypto.randomUUID(), nombre: "AMD", descripcion: "..." },
   { id: crypto.randomUUID(), nombre: "Intel", descripcion: "..." },
   { id: crypto.randomUUID(), nombre: "Nvidia", descripcion: "..." },
+  { id: crypto.randomUUID(), nombre: "Apple", descripcion: "..." },
   { id: crypto.randomUUID(), nombre: "SSD", descripcion: "..." },
   { id: crypto.randomUUID(), nombre: "HDD", descripcion: "..." },
   { id: crypto.randomUUID(), nombre: "LED", descripcion: "..." },

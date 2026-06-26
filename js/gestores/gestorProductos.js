@@ -1,18 +1,6 @@
-import {
-  agregarCategoria,
-  listadoCategorias,
-  editarCategoria,
-  eliminarCategoria,
-  conseguirCategoria,
-} from "../gestores/gestorCategorias.js";
+import { listadoCategorias } from "../gestores/gestorCategorias.js";
 
-import {
-  agregarEtiqueta,
-  listadoEtiquetas,
-  editarEtiqueta,
-  eliminarEtiqueta,
-  conseguirEtiqueta,
-} from "../gestores/gestorEtiquetas.js";
+import { listadoEtiquetas } from "../gestores/gestorEtiquetas.js";
 
 let productos;
 const claveProductos = "productos";
@@ -101,7 +89,7 @@ export function listadoProductos() {
   return productos;
 }
 
-export function conseguirProductos(id) {
+export function conseguirProducto(id) {
   return productos.find((prod) => prod.id === id) || null;
 }
 

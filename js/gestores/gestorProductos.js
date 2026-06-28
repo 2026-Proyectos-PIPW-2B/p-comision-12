@@ -55,7 +55,6 @@ export function agregarProducto(
   );
   productos.push(producto);
   localStorage.setItem(claveProductos, JSON.stringify(productos));
-  console.log(productos);
 }
 
 export function editarProducto(

@@ -80,17 +80,19 @@ function inicializar() {
 }
 
 function obtener_etiquetas() {
-  const checkboxes = document.querySelectorAll(
+  const checkboxes = contenedor_de_etiquetas.querySelectorAll(
     '#formAltaProducto input[type="checkbox"]',
   );
+
+  console.log(checkboxes);
 
   const etiquetas = [];
 
   checkboxes.forEach((checkbox) => {
     if (checkbox.checked) {
-      etiquetas.push(checkbox.id);
+      etiquetas.push(checkbox.getAttribute("data-identificador"));
     }
   });
-
+  console.log(etiquetas);
   return etiquetas;
 }

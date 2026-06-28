@@ -14,7 +14,6 @@ window.addEventListener("load", function () {
   ];
   categorias =
     JSON.parse(localStorage.getItem(claveCategorias)) || categoriasTemplate;
-  console.log(categorias);
   localStorage.setItem(claveCategorias, JSON.stringify(categorias));
 });
 
@@ -44,8 +43,6 @@ export function listadoCategorias() {
 }
 
 export function conseguirCategoria(id) {
-  //console.log(categorias);
-  console.log(id);
   return categorias.find((cat) => cat.id === id) || null;
 }
 

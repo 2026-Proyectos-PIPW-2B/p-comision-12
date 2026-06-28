@@ -1,6 +1,5 @@
 import {
   cargar_categorias,
-  cargar_etiquetas,
   cargar_etiquetas_seleccionadas,
 } from "../adminProductos/importar_etiquetas_producto.js";
 
@@ -48,6 +47,7 @@ const contenedor_de_etiquetas_edicion_producto = document.getElementById(
 const input_descripcion_edicion_producto = document.getElementById(
   "input_descripcion_edicion_producto",
 );
+const buttonEdicionProducto = document.getElementById("buttonEdicionProducto");
 
 const error_nombre_edicion_producto = document.getElementById(
   "error_nombre_edicion_producto",
@@ -91,7 +91,7 @@ function inicializar() {
     );
     input_descripcion_edicion_producto.value = producto.descripcion;
 
-    boton.setAttribute("data-identificador", id);
+    buttonEdicionProducto.setAttribute("data-identificador", id);
   });
 
   formEdicionProducto.addEventListener("submit", function (event) {
@@ -245,17 +245,18 @@ function crearBotonEliminar() {
 }
 
 function obtener_etiquetas() {
-  const checkboxes = document.querySelectorAll(
+  const checkboxes = contenedor_de_etiquetas_edicion_producto.querySelectorAll(
     '#formEdicionProducto input[type="checkbox"]',
   );
+  console.log(checkboxes);
 
   const etiquetas = [];
 
   checkboxes.forEach((checkbox) => {
     if (checkbox.checked) {
-      etiquetas.push(checkbox.id);
+      etiquetas.push(checkbox.getAttribute("data-identificador"));
     }
   });
-
+  console.log(etiquetas);
   return etiquetas;
 }

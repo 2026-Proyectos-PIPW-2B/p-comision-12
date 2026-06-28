@@ -31,7 +31,8 @@ export function cargar_etiquetas(contenedor_de_etiquetas) {
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.classList.add("btn-check");
-    checkbox.id = etiqueta.id;
+    checkbox.id = "eti-" + etiqueta.id;
+    checkbox.setAttribute("data-identificador", etiqueta.id);
     checkbox.autocomplete = "off";
 
     const label = document.createElement("label");
@@ -59,7 +60,8 @@ export function cargar_etiquetas_seleccionadas(
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.classList.add("btn-check");
-    checkbox.id = etiqueta.id;
+    checkbox.id = "etiSeleccionada-" + etiqueta.id;
+    checkbox.setAttribute("data-identificador", etiqueta.id);
     checkbox.autocomplete = "off";
 
     idEtiquetasSeleccionadas.forEach((idEtiqueta) => {

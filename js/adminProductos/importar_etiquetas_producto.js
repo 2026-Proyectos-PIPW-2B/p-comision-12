@@ -1,12 +1,6 @@
-import {
-  listadoCategorias,
-  conseguirCategoria,
-} from "../gestores/gestorCategorias.js";
+import { listadoCategorias } from "../gestores/gestorCategorias.js";
 
-import {
-  listadoEtiquetas,
-  conseguirEtiqueta,
-} from "../gestores/gestorEtiquetas.js";
+import { listadoEtiquetas } from "../gestores/gestorEtiquetas.js";
 
 let categorias = [];
 let etiquetas = [];

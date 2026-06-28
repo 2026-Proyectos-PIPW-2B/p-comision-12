@@ -288,7 +288,7 @@
                   id="error_categoria_producto"></div>
               </div>
 
-              <!-- Boton Collapse Editar Etiqueta -->
+              <!-- Boton Collapse Seleccionar Etiquetas -->
               <div class="d-flex justify-content-center">
                 <button
                   class="btn rounded-pill btn-outline-warning text-nowrap w-50 my-2"
@@ -302,7 +302,7 @@
                 </button>
               </div>
 
-              <!-- Collapse Editar Etiquetas -->
+              <!-- Collapse Seleccionar Etiquetas -->
               <div
                 class="collapse"
                 id="collapseSeleccionarEtiquetaEnCreacionProducto">
@@ -332,7 +332,10 @@
               </div>
 
               <div class="d-grid my-4 w-75 mx-auto">
-                <button class="btn btn-outline-warning" type="submit">
+                <button
+                  id="buttonEdicionProducto"
+                  class="btn btn-outline-warning"
+                  type="submit">
                   Guardar producto
                 </button>
               </div>
@@ -378,6 +381,9 @@
                     placeholder="Nombre del producto"
                     aria-label="Nombre del producto"
                     aria-describedby="basic-addon-name-product" />
+                  <div
+                    class="invalid-feedback"
+                    id="error_nombre_edicion_producto"></div>
                 </div>
 
                 <div class="input-group my-2 w-75 mx-auto">
@@ -393,6 +399,9 @@
                     placeholder="Precio"
                     aria-label="Precio"
                     aria-describedby="basic-addon-precio" />
+                  <div
+                    class="invalid-feedback"
+                    id="error_precio_edicion_producto"></div>
                 </div>
 
                 <div class="input-group my-2 w-75 mx-auto">
@@ -408,6 +417,9 @@
                     placeholder="Cantidad de stock"
                     aria-label="stock"
                     aria-describedby="basic-addon-stock" />
+                  <div
+                    class="invalid-feedback"
+                    id="error_stock_edicion_producto"></div>
                 </div>
 
                 <div class="input-group my-2 w-75 pb-2 mx-auto">
@@ -450,6 +462,9 @@
                       Perifericos
                     </option>
                   </select>
+                  <div
+                    class="invalid-feedback"
+                    id="error_img_edicion_producto"></div>
                 </div>
 
                 <div class="input-group my-2 w-75 pb-2 mx-auto">
@@ -464,12 +479,13 @@
                     <option value="Seleccionar" disabled selected hidden>
                       Seleccionar Categoria
                     </option>
-                    <option value="img1">Categoria 1</option>
-                    <option value="img2">Categoria 2</option>
                   </select>
+                  <div
+                    class="invalid-feedback"
+                    id="error_categoria_edicion_producto"></div>
                 </div>
 
-                <!-- Boton collapse Editar Etiqueta -->
+                <!-- Boton collapse Seleccionar Etiquetas en EDICION -->
                 <div class="d-flex justify-content-center">
                   <button
                     class="btn rounded-pill btn-outline-warning text-nowrap w-50 my-2"
@@ -483,7 +499,7 @@
                   </button>
                 </div>
 
-                <!-- Collapse Editar Etiquetas -->
+                <!-- Collapse Seleccionar Etiquetas en EDICION -->
                 <div
                   class="collapse"
                   id="collapseSeleccionarEtiquetaEnEdicionProducto">
@@ -507,10 +523,16 @@
                     placeholder="Descripcion"
                     aria-label="Descripcion"
                     aria-describedby="basic-addon-description"></textarea>
+                  <div
+                    class="invalid-feedback"
+                    id="error_descripcion_edicion_producto"></div>
                 </div>
 
                 <div class="d-grid my-4 w-75 mx-auto">
-                  <button class="btn btn-outline-warning" type="submit">
+                  <button
+                    id="buttonEdicionProducto"
+                    class="btn btn-outline-warning"
+                    type="submit">
                     Guardar producto
                   </button>
                 </div>

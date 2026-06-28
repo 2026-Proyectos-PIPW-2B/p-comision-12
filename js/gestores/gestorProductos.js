@@ -32,6 +32,7 @@ window.addEventListener("load", function () {
   ];
   productos =
     JSON.parse(localStorage.getItem(claveProductos)) || productosTemplate;
+  localStorage.setItem(claveProductos, JSON.stringify(productos));
 });
 
 export function agregarProducto(

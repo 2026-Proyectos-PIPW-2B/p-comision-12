@@ -1,9 +1,19 @@
 import {
+  cargar_categorias,
+  cargar_etiquetas,
+} from "../adminProductos/importar_etiquetas_producto.js";
+
+import {
   listadoProductos,
   editarProducto,
   eliminarProducto,
   conseguirProducto,
 } from "../gestores/gestorProductos.js";
+
+import {
+  datos_validos,
+  limpiar_estados,
+} from "../adminProductos/validacionProductos.js";
 
 import { conseguirCategoria } from "../gestores/gestorCategorias.js";
 import { conseguirEtiqueta } from "../gestores/gestorEtiquetas.js";
@@ -38,9 +48,30 @@ const input_descripcion_edicion_producto = document.getElementById(
   "input_descripcion_edicion_producto",
 );
 
+const error_nombre_edicion_producto = document.getElementById(
+  "error_nombre_edicion_producto",
+);
+const error_precio_edicion_producto = document.getElementById(
+  "error_precio_edicion_producto",
+);
+const error_stock_edicion_producto = document.getElementById(
+  "error_stock_edicion_producto",
+);
+const error_img_edicion_producto = document.getElementById(
+  "error_img_edicion_producto",
+);
+const error_categoria_edicion_producto = document.getElementById(
+  "error_categoria_edicion_producto",
+);
+const error_descripcion_edicion_producto = document.getElementById(
+  "error_descripcion_edicion_producto",
+);
+
 window.addEventListener("load", function () {
   inicializar();
   cargarTabla();
+  cargar_categorias(select_categoria_edicion_producto);
+  cargar_etiquetas(contenedor_de_etiquetas_edicion_producto);
 });
 
 function inicializar() {
@@ -53,37 +84,48 @@ function inicializar() {
     input_precio_edicion_producto.value = producto.precio;
     input_stock_edicion_producto.value = producto.stock;
     select_imagen_edicion_producto.value = producto.img;
-
     select_categoria_edicion_producto.value = producto.categoria;
-    //TODO: Categoria y Etiqueta
-
+    // TODO: Setear etiquetas correspondientes como seleccionadas.
     input_descripcion_edicion_producto.value = producto.descripcion;
-    //buttonEdicionEtiqueta.setAttribute("data-identificador", id);
+
+    buttonEdicionProducto.setAttribute("data-identificador", id);
   });
 
   formEdicionProducto.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    limpiarValidacion();
+    limpiar_estados();
 
-    if (
-      validarDatos(
-        inputNameEdicionEtiqueta,
-        invalidNameEdicionEtiqueta,
-        inputDescripcionEdicionEtiqueta,
-        invalidDescripcionEdicionEtiqueta,
-      )
-    ) {
-      // TO-DO: Editar etiqueta por id.
-      editarEtiqueta(
-        buttonEdicionEtiqueta.getAttribute("data-identificador"),
-        inputNameEdicionEtiqueta.value,
-        inputDescripcionEdicionEtiqueta.value,
+    let validacionFormulario = datos_validos(
+      input_nombre_edicion_producto,
+      error_nombre_edicion_producto,
+      input_precio_edicion_producto,
+      error_precio_edicion_producto,
+      input_stock_edicion_producto,
+      error_stock_edicion_producto,
+      select_imagen_edicion_producto,
+      error_img_edicion_producto,
+      select_categoria_edicion_producto,
+      error_categoria_edicion_producto,
+      input_descripcion_edicion_producto,
+      error_descripcion_edicion_producto,
+    );
+
+    if (validacionFormulario) {
+      editarProducto(
+        buttonEdicionProducto.getAttribute("data-identificador"),
+        input_nombre_edicion_producto.value,
+        Number(input_precio_edicion_producto.value),
+        Number(input_stock_edicion_producto.value),
+        select_imagen_edicion_producto.value,
+        select_categoria_edicion_producto.value,
+        obtener_etiquetas(contenedor_de_etiquetas_edicion_producto),
+        input_descripcion_edicion_producto.value.trim(),
       );
-      formEdicionEtiqueta.reset();
-      buttonEdicionEtiqueta.removeAttribute("data-identificador");
-      limpiarValidacion();
-      cargarTablaEtiquetas();
+      formEdicionProducto.reset();
+      buttonEdicionProducto.removeAttribute("data-identificador");
+      limpiar_estados();
+      cargarTabla();
     }
   });
 }
@@ -116,18 +158,23 @@ export function cargarTabla() {
     tdImagen.appendChild(img);
 
     const tdCategoria = document.createElement("td");
-    tdCategoria.textContent = conseguirCategoria(producto.categoria).nombre;
+    let categoriaEncontrada = conseguirCategoria(producto.categoria);
+    if (categoriaEncontrada) {
+      tdCategoria.textContent = categoriaEncontrada.nombre;
+    }
 
     const tdEtiquetas = document.createElement("td");
     let etiquetas = producto.etiquetas;
 
     for (let index = 0; index < etiquetas.length; index++) {
-      let nombreEtiqueta = conseguirEtiqueta(etiquetas[index]).nombre;
-
-      if (index + 1 == etiquetas.length) {
-        tdEtiquetas.textContent += nombreEtiqueta;
-      } else {
-        tdEtiquetas.textContent += nombreEtiqueta + ", ";
+      let etiquetaEncontrada = conseguirEtiqueta(etiquetas[index]);
+      if (etiquetaEncontrada) {
+        let nombreEtiqueta = etiquetaEncontrada.nombre;
+        if (index + 1 == etiquetas.length) {
+          tdEtiquetas.textContent += nombreEtiqueta;
+        } else {
+          tdEtiquetas.textContent += nombreEtiqueta + ", ";
+        }
       }
     }
 
@@ -192,4 +239,20 @@ function crearBotonEliminar() {
   boton.appendChild(i);
 
   return boton;
+}
+
+function obtener_etiquetas() {
+  const checkboxes = document.querySelectorAll(
+    '#formEdicionProducto input[type="checkbox"]',
+  );
+
+  const etiquetas = [];
+
+  checkboxes.forEach((checkbox) => {
+    if (checkbox.checked) {
+      etiquetas.push(checkbox.id);
+    }
+  });
+
+  return etiquetas;
 }

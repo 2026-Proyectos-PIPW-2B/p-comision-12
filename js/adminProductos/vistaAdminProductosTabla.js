@@ -1,6 +1,7 @@
 import {
   cargar_categorias,
   cargar_etiquetas,
+  cargar_etiquetas_seleccionadas,
 } from "../adminProductos/importar_etiquetas_producto.js";
 
 import {
@@ -71,7 +72,6 @@ window.addEventListener("load", function () {
   inicializar();
   cargarTabla();
   cargar_categorias(select_categoria_edicion_producto);
-  cargar_etiquetas(contenedor_de_etiquetas_edicion_producto);
 });
 
 function inicializar() {
@@ -85,10 +85,13 @@ function inicializar() {
     input_stock_edicion_producto.value = producto.stock;
     select_imagen_edicion_producto.value = producto.img;
     select_categoria_edicion_producto.value = producto.categoria;
-    // TODO: Setear etiquetas correspondientes como seleccionadas.
+    cargar_etiquetas_seleccionadas(
+      contenedor_de_etiquetas_edicion_producto,
+      producto.etiquetas,
+    );
     input_descripcion_edicion_producto.value = producto.descripcion;
 
-    buttonEdicionProducto.setAttribute("data-identificador", id);
+    boton.setAttribute("data-identificador", id);
   });
 
   formEdicionProducto.addEventListener("submit", function (event) {

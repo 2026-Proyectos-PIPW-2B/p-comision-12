@@ -87,7 +87,14 @@ export function conseguir_cuenta_login(username, password) {
 
     const cuentas = JSON.parse(localStorage.getItem(clave_cuentas)) || [];
 
-    const cuenta = cuentas.find(c => c.username === username);
+    let cuenta = null;
+
+for (let i = 0; i < cuentas.length; i++) {
+    if (cuentas[i].username === username) {
+        cuenta = cuentas[i];
+        break;
+    }
+}
 
     if (!cuenta) return -1;
 

@@ -72,14 +72,13 @@ export function consultar_sesion() {
 }
 
 
-export function conseguir_rol_usuario() {
+export function conseguir_usuario_iniciado() {
+    let cuentas = JSON.parse(localStorage.getItem("cuentas")) || cuentas_template;
 
-    const cuentas = JSON.parse(localStorage.getItem(clave_cuentas)) || [];
+    const usuario = cuentas.find(cuenta => cuenta.sesion);
 
-    for (let cuenta of cuentas) {
-        if (cuenta.sesion === true) {
-            return cuenta.rol;
-        }
+    if (usuario) {
+        return usuario.id;
     }
 
     return null;

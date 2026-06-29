@@ -4,28 +4,37 @@ const clave_cuentas = "cuentas";
 const cuentas_template = [
   {
     id: crypto.randomUUID(),
-    usuario: "admin",
-    contrasena: "admin",
+    username: "admin",
+    password: "admin",
     email: "",
     tel: "",
     sesion: false,
     rol: "admin"
+  },{
+    id: crypto.randomUUID(),
+    username: "ale",
+    password: "ale",
+    email: "",
+    tel: "",
+    sesion: false,
+    rol: "usuario final"
   },
 ];
 
 window.addEventListener("load", function () {
   cuentas = JSON.parse(localStorage.getItem(clave_cuentas)) || cuentas_template;
+  localStorage.setItem(clave_cuentas, JSON.stringify(cuentas));
 });
 
-export function agregar_cuenta(usuario, contrasena, email,tel) {
-  let cuenta = crear_cuenta(usuario, contrasena, email,tel);
+export function agregar_cuenta(username,password, email,tel) {
+  let cuenta = crear_cuenta( username, password, email,tel);
 
   cuentas.push(cuenta);
 
   localStorage.setItem(clave_cuentas, JSON.stringify(cuentas));
 }
 
-export function editar_cuenta(id, usuario, contrasena, email,tel) {
+export function editar_cuenta(id, username,password, email,tel) {
     let index = -1;
 
     for (let i = 0; i < cuentas.length; i++) {
@@ -36,8 +45,8 @@ export function editar_cuenta(id, usuario, contrasena, email,tel) {
     }
 
   if (index !== -1) {
-        cuentas[index].usuario = usuario;
-        cuentas[index].contrasena = contrasena;
+        cuentas[index].username = username;
+        cuentas[index].password = password;
         cuentas[index].email = email;
         cuentas[index].tel = tel;
 
@@ -74,25 +83,38 @@ export function conseguir_cuenta(id) {
     return encontrada
 }
 
-export function conseguir_cuenta_login(usuario, contrasena) {
-  for (let cuenta of cuentas) {
-        if (
-            cuenta.usuario === usuario &&
-            cuenta.contrasena === contrasena
-        ) {
-            return cuenta;
+export function conseguir_cuenta_login(username, password) {
+
+    const cuentas = JSON.parse(localStorage.getItem(clave_cuentas)) || [];
+
+    const cuenta = cuentas.find(c => c.username === username);
+
+    if (!cuenta) return -1;
+
+    if (cuenta.password !== password) return -2;
+
+    return cuenta;
+}
+
+export function conseguir_rol_usuario() {
+
+    const cuentas = JSON.parse(localStorage.getItem(clave_cuentas)) || [];
+
+    for (let cuenta of cuentas) {
+        if (cuenta.sesion === true) {
+            return cuenta.rol;
         }
     }
 
     return null;
 }
 
-function crear_cuenta(usuario, contrasena, email,tel) {
+function crear_cuenta(username,password, email,tel) {
   function crear_objeto(){
         let cuenta = {
             id: crypto.randomUUID(),
-            usuario: usuario,
-            contrasena: contrasena,
+            username: username,
+            password: password,
             email: email,
             tel: tel,
             sesion: false,
@@ -101,4 +123,6 @@ function crear_cuenta(usuario, contrasena, email,tel) {
         return cuenta
   };
   return crear_objeto();
+
+ 
 }

@@ -1,8 +1,12 @@
 import {
     consultar_sesion,
     cerrar_sesion,
-    conseguir_rol_usuario,
+    
 } from "../js/gestores/gestor_sesion.js";
+
+import {
+    conseguir_rol_usuario,
+} from "../js/gestores/gestor_cuentas.js"
 
 let txt_sesion = document.getElementById("txt_sesion")
 let btn_accion_admin = document.getElementById("buttonAdminActions")
@@ -35,8 +39,14 @@ function modificar_btn_sesion(){
     }
 }
 
-function modificar_btn_rol(){
-    if (conseguir_rol_usuario() === "admin"){
-        btn_accion_admin.style.visibility = "visible"
+function modificar_btn_rol() {
+    const rol = conseguir_rol_usuario();
+
+    if (rol === "admin") {
+        btn_accion_admin.style.visibility = "visible";
+    } else if (rol === "usuario final") {
+        btn_accion_admin.style.visibility = "hidden";
+    } else if (rol === null) {
+        btn_accion_admin.style.visibility = "hidden";
     }
 }

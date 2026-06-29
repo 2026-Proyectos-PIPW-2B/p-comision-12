@@ -1,19 +1,20 @@
 let categorias;
 const claveCategorias = "categorias";
-const categoriasTemplate = [
-  { id: crypto.randomUUID(), nombre: "Procesadores", descripcion: "..." },
-  { id: crypto.randomUUID(), nombre: "Motherboards", descripcion: "..." },
-  { id: crypto.randomUUID(), nombre: "Memorias RAM", descripcion: "..." },
-  { id: crypto.randomUUID(), nombre: "Placas de Video", descripcion: "..." },
-  { id: crypto.randomUUID(), nombre: "Discos SSD/HDD", descripcion: "..." },
-  { id: crypto.randomUUID(), nombre: "Monitores", descripcion: "..." },
-  { id: crypto.randomUUID(), nombre: "Notebooks", descripcion: "..." },
-  { id: crypto.randomUUID(), nombre: "Perifericos", descripcion: "..." },
-];
 
 window.addEventListener("load", function () {
+  const categoriasTemplate = [
+    { id: crypto.randomUUID(), nombre: "Procesadores", descripcion: "..." },
+    { id: crypto.randomUUID(), nombre: "Motherboards", descripcion: "..." },
+    { id: crypto.randomUUID(), nombre: "Memorias RAM", descripcion: "..." },
+    { id: crypto.randomUUID(), nombre: "Placas de Video", descripcion: "..." },
+    { id: crypto.randomUUID(), nombre: "Discos SSD/HDD", descripcion: "..." },
+    { id: crypto.randomUUID(), nombre: "Monitores", descripcion: "..." },
+    { id: crypto.randomUUID(), nombre: "Notebooks", descripcion: "..." },
+    { id: crypto.randomUUID(), nombre: "Perifericos", descripcion: "..." },
+  ];
   categorias =
     JSON.parse(localStorage.getItem(claveCategorias)) || categoriasTemplate;
+  localStorage.setItem(claveCategorias, JSON.stringify(categorias));
 });
 
 export function agregarCategoria(nombre, descripcion) {

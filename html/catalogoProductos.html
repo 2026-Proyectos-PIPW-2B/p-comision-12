@@ -142,6 +142,7 @@
       </div>
     </nav>
 
+    <!-- Barra de Filtrado -->
     <section
       id="sectionFilters"
       class="d-flex justify-content-center my-2"
@@ -149,71 +150,30 @@
       <div class="card bg-black border-1 shadow border-warning rounded-pill">
         <div class="card-body">
           <form
-            class="needs-validation d-flex flex-wrap justify-content-center align-items-center gap-2"
+            id="formFiltros"
+            class="needs-validation d-flex flex-wrap justify-content-center align-items-center gap-4"
             novalidate>
             <div>
               <select
                 class="form-select bg-black text-warning rounded-pill border-warning-subtle"
-                id="validationCustom04"
+                id="select_categorias"
                 required>
                 <option selected disabled value="">Categorias</option>
-                <option>Categoria 01</option>
-                <option>Categoria 02</option>
-                <option>Categoria 03</option>
-                <option>Categoria 04</option>
               </select>
             </div>
 
             <div>
               <div class="btn-group dropdown-center">
                 <button
-                  class="btn btn-outline-warning border-warning-subtle rounded-pill dropdown-toggle"
+                  class="btn rounded-pill btn-outline-warning text-nowrap w-50 my-2"
                   type="button"
-                  data-bs-toggle="dropdown"
-                  data-bs-auto-close="outside"
-                  aria-expanded="false">
-                  Etiquetas
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseSeleccionarEtiquetas"
+                  aria-expanded="false"
+                  aria-controls="collapseSeleccionarEtiquetas">
+                  <i class="bi bi-tags text-warning"></i>
+                  <span>Seleccionar Etiquetas</span>
                 </button>
-                <ul
-                  class="dropdown-menu bg-black p-3 text-center"
-                  style="min-width: auto; width: max-content">
-                  <li class="mb-2">
-                    <input
-                      type="checkbox"
-                      class="btn-check"
-                      id="etiqueta01"
-                      autocomplete="off" />
-                    <label
-                      class="btn btn-outline-warning rounded-pill"
-                      for="etiqueta01"
-                      >Etiqueta 01</label
-                    >
-                  </li>
-                  <li class="mb-2">
-                    <input
-                      type="checkbox"
-                      class="btn-check"
-                      id="etiqueta02"
-                      autocomplete="off" />
-                    <label
-                      class="btn btn-outline-warning rounded-pill"
-                      for="etiqueta02"
-                      >Etiqueta 02</label
-                    >
-                  </li>
-                  <li class="mb-2">
-                    <input
-                      type="checkbox"
-                      class="btn-check"
-                      id="etiqueta03"
-                      autocomplete="off" />
-                    <label
-                      class="btn btn-outline-warning rounded-pill"
-                      for="etiqueta03"
-                      >Etiqueta 03</label
-                    >
-                  </li>
-                </ul>
               </div>
             </div>
 
@@ -230,9 +190,19 @@
 
             <div>
               <button
+                id="botonAplicarFiltros"
                 class="btn btn-warning rounded-pill text-nowrap"
                 type="button">
                 Aplicar Filtros
+              </button>
+            </div>
+
+            <div>
+              <button
+                id="botonLimpiarFiltros"
+                class="btn btn-outline-warning rounded-pill text-nowrap"
+                type="button">
+                Limpiar Filtros
               </button>
             </div>
           </form>
@@ -240,662 +210,31 @@
       </div>
     </section>
 
+    <!-- Collapse Seleccionar Etiquetas en Filtrado -->
+    <section>
+      <div class="collapse" id="collapseSeleccionarEtiquetas">
+        <div
+          class="container text-center mb-3 p-3 rounded-4 border border-warning border-1 bg-black">
+          <div id="contenedor_de_etiquetas" class="row row-cols-4"></div>
+        </div>
+      </div>
+    </section>
+
     <main class="my-5">
       <div class="container text-center" data-bs-theme="dark">
-        <div class="row justify-content-center my-2">
-          <div class="col-xl-3 col-lg-5 col-md-6 col-8">
-            <div class="card shadow border-0 m-2 p-2">
-              <img
-                src="../img/products/laptop-computer-isolated-on-white-background.jpg"
-                class="card-img-top"
-                alt="Imagen de prueba" />
-              <div class="card-body">
-                <h5 class="card-title">Producto</h5>
-                <p class="card-text">
-                  Una breve descripcion de prueba para la carta del producto en
-                  el catalogo.
-                </p>
-
-                <div class="input-group my-1">
-                  <button
-                    id="buttonProductCardTest01"
-                    class="btn btn-outline-warning rounded-start-pill"
-                    type="button">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                  <input
-                    id="inputNumberProductCardTest01"
-                    class="form-control border-warning-subtle rounded-end-pill"
-                    type="number"
-                    placeholder=""
-                    aria-label="Cantidad de Productos" />
-                </div>
-                <div class="input-group justify-content-center">
-                  <span
-                    class="input-group-text border-warning-subtle rounded-start-pill"
-                    >Stock</span
-                  >
-                  <span
-                    class="input-group-text border-warning-subtle rounded-end-pill"
-                    >10</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-5 col-md-6 col-8">
-            <div class="card shadow border-0 m-2 p-2">
-              <img
-                src="../img/products/laptop-computer-isolated-on-white-background.jpg"
-                class="card-img-top"
-                alt="Imagen de prueba" />
-              <div class="card-body">
-                <h5 class="card-title">Producto</h5>
-                <p class="card-text">
-                  Una breve descripcion de prueba para la carta del producto en
-                  el catalogo.
-                </p>
-
-                <div class="input-group my-1">
-                  <button
-                    id="buttonProductCardTest01"
-                    class="btn btn-outline-warning rounded-start-pill"
-                    type="button">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                  <input
-                    id="inputNumberProductCardTest01"
-                    class="form-control border-warning-subtle rounded-end-pill"
-                    type="number"
-                    placeholder=""
-                    aria-label="Cantidad de Productos" />
-                </div>
-                <div class="input-group justify-content-center">
-                  <span
-                    class="input-group-text border-warning-subtle rounded-start-pill"
-                    >Stock</span
-                  >
-                  <span
-                    class="input-group-text border-warning-subtle rounded-end-pill"
-                    >10</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-5 col-md-6 col-8">
-            <div class="card shadow border-0 m-2 p-2">
-              <img
-                src="../img/products/laptop-computer-isolated-on-white-background.jpg"
-                class="card-img-top"
-                alt="Imagen de prueba" />
-              <div class="card-body">
-                <h5 class="card-title">Producto</h5>
-                <p class="card-text">
-                  Una breve descripcion de prueba para la carta del producto en
-                  el catalogo.
-                </p>
-
-                <div class="input-group my-1">
-                  <button
-                    id="buttonProductCardTest01"
-                    class="btn btn-outline-warning rounded-start-pill"
-                    type="button">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                  <input
-                    id="inputNumberProductCardTest01"
-                    class="form-control border-warning-subtle rounded-end-pill"
-                    type="number"
-                    placeholder=""
-                    aria-label="Cantidad de Productos" />
-                </div>
-                <div class="input-group justify-content-center">
-                  <span
-                    class="input-group-text border-warning-subtle rounded-start-pill"
-                    >Stock</span
-                  >
-                  <span
-                    class="input-group-text border-warning-subtle rounded-end-pill"
-                    >10</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-5 col-md-6 col-8">
-            <div class="card shadow border-0 m-2 p-2">
-              <img
-                src="../img/products/laptop-computer-isolated-on-white-background.jpg"
-                class="card-img-top"
-                alt="Imagen de prueba" />
-              <div class="card-body">
-                <h5 class="card-title">Producto</h5>
-                <p class="card-text">
-                  Una breve descripcion de prueba para la carta del producto en
-                  el catalogo.
-                </p>
-
-                <div class="input-group my-1">
-                  <button
-                    id="buttonProductCardTest01"
-                    class="btn btn-outline-warning rounded-start-pill"
-                    type="button">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                  <input
-                    id="inputNumberProductCardTest01"
-                    class="form-control border-warning-subtle rounded-end-pill"
-                    type="number"
-                    placeholder=""
-                    aria-label="Cantidad de Productos" />
-                </div>
-                <div class="input-group justify-content-center">
-                  <span
-                    class="input-group-text border-warning-subtle rounded-start-pill"
-                    >Stock</span
-                  >
-                  <span
-                    class="input-group-text border-warning-subtle rounded-end-pill"
-                    >10</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row justify-content-center my-2">
-          <div class="col-xl-3 col-lg-5 col-md-6 col-8">
-            <div class="card shadow border-0 m-2 p-2">
-              <img
-                src="../img/products/laptop-computer-isolated-on-white-background.jpg"
-                class="card-img-top"
-                alt="Imagen de prueba" />
-              <div class="card-body">
-                <h5 class="card-title">Producto</h5>
-                <p class="card-text">
-                  Una breve descripcion de prueba para la carta del producto en
-                  el catalogo.
-                </p>
-
-                <div class="input-group my-1">
-                  <button
-                    id="buttonProductCardTest01"
-                    class="btn btn-outline-warning rounded-start-pill"
-                    type="button">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                  <input
-                    id="inputNumberProductCardTest01"
-                    class="form-control border-warning-subtle rounded-end-pill"
-                    type="number"
-                    placeholder=""
-                    aria-label="Cantidad de Productos" />
-                </div>
-                <div class="input-group justify-content-center">
-                  <span
-                    class="input-group-text border-warning-subtle rounded-start-pill"
-                    >Stock</span
-                  >
-                  <span
-                    class="input-group-text border-warning-subtle rounded-end-pill"
-                    >10</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-5 col-md-6 col-8">
-            <div class="card shadow border-0 m-2 p-2">
-              <img
-                src="../img/products/laptop-computer-isolated-on-white-background.jpg"
-                class="card-img-top"
-                alt="Imagen de prueba" />
-              <div class="card-body">
-                <h5 class="card-title">Producto</h5>
-                <p class="card-text">
-                  Una breve descripcion de prueba para la carta del producto en
-                  el catalogo.
-                </p>
-
-                <div class="input-group my-1">
-                  <button
-                    id="buttonProductCardTest01"
-                    class="btn btn-outline-warning rounded-start-pill"
-                    type="button">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                  <input
-                    id="inputNumberProductCardTest01"
-                    class="form-control border-warning-subtle rounded-end-pill"
-                    type="number"
-                    placeholder=""
-                    aria-label="Cantidad de Productos" />
-                </div>
-                <div class="input-group justify-content-center">
-                  <span
-                    class="input-group-text border-warning-subtle rounded-start-pill"
-                    >Stock</span
-                  >
-                  <span
-                    class="input-group-text border-warning-subtle rounded-end-pill"
-                    >10</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-5 col-md-6 col-8">
-            <div class="card shadow border-0 m-2 p-2">
-              <img
-                src="../img/products/laptop-computer-isolated-on-white-background.jpg"
-                class="card-img-top"
-                alt="Imagen de prueba" />
-              <div class="card-body">
-                <h5 class="card-title">Producto</h5>
-                <p class="card-text">
-                  Una breve descripcion de prueba para la carta del producto en
-                  el catalogo.
-                </p>
-
-                <div class="input-group my-1">
-                  <button
-                    id="buttonProductCardTest01"
-                    class="btn btn-outline-warning rounded-start-pill"
-                    type="button">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                  <input
-                    id="inputNumberProductCardTest01"
-                    class="form-control border-warning-subtle rounded-end-pill"
-                    type="number"
-                    placeholder=""
-                    aria-label="Cantidad de Productos" />
-                </div>
-                <div class="input-group justify-content-center">
-                  <span
-                    class="input-group-text border-warning-subtle rounded-start-pill"
-                    >Stock</span
-                  >
-                  <span
-                    class="input-group-text border-warning-subtle rounded-end-pill"
-                    >10</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-5 col-md-6 col-8">
-            <div class="card shadow border-0 m-2 p-2">
-              <img
-                src="../img/products/laptop-computer-isolated-on-white-background.jpg"
-                class="card-img-top"
-                alt="Imagen de prueba" />
-              <div class="card-body">
-                <h5 class="card-title">Producto</h5>
-                <p class="card-text">
-                  Una breve descripcion de prueba para la carta del producto en
-                  el catalogo.
-                </p>
-
-                <div class="input-group my-1">
-                  <button
-                    id="buttonProductCardTest01"
-                    class="btn btn-outline-warning rounded-start-pill"
-                    type="button">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                  <input
-                    id="inputNumberProductCardTest01"
-                    class="form-control border-warning-subtle rounded-end-pill"
-                    type="number"
-                    placeholder=""
-                    aria-label="Cantidad de Productos" />
-                </div>
-                <div class="input-group justify-content-center">
-                  <span
-                    class="input-group-text border-warning-subtle rounded-start-pill"
-                    >Stock</span
-                  >
-                  <span
-                    class="input-group-text border-warning-subtle rounded-end-pill"
-                    >10</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row justify-content-center my-2">
-          <div class="col-xl-3 col-lg-5 col-md-6 col-8">
-            <div class="card shadow border-0 m-2 p-2">
-              <img
-                src="../img/products/laptop-computer-isolated-on-white-background.jpg"
-                class="card-img-top"
-                alt="Imagen de prueba" />
-              <div class="card-body">
-                <h5 class="card-title">Producto</h5>
-                <p class="card-text">
-                  Una breve descripcion de prueba para la carta del producto en
-                  el catalogo.
-                </p>
-
-                <div class="input-group my-1">
-                  <button
-                    id="buttonProductCardTest01"
-                    class="btn btn-outline-warning rounded-start-pill"
-                    type="button">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                  <input
-                    id="inputNumberProductCardTest01"
-                    class="form-control border-warning-subtle rounded-end-pill"
-                    type="number"
-                    placeholder=""
-                    aria-label="Cantidad de Productos" />
-                </div>
-                <div class="input-group justify-content-center">
-                  <span
-                    class="input-group-text border-warning-subtle rounded-start-pill"
-                    >Stock</span
-                  >
-                  <span
-                    class="input-group-text border-warning-subtle rounded-end-pill"
-                    >10</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-5 col-md-6 col-8">
-            <div class="card shadow border-0 m-2 p-2">
-              <img
-                src="../img/products/laptop-computer-isolated-on-white-background.jpg"
-                class="card-img-top"
-                alt="Imagen de prueba" />
-              <div class="card-body">
-                <h5 class="card-title">Producto</h5>
-                <p class="card-text">
-                  Una breve descripcion de prueba para la carta del producto en
-                  el catalogo.
-                </p>
-
-                <div class="input-group my-1">
-                  <button
-                    id="buttonProductCardTest01"
-                    class="btn btn-outline-warning rounded-start-pill"
-                    type="button">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                  <input
-                    id="inputNumberProductCardTest01"
-                    class="form-control border-warning-subtle rounded-end-pill"
-                    type="number"
-                    placeholder=""
-                    aria-label="Cantidad de Productos" />
-                </div>
-                <div class="input-group justify-content-center">
-                  <span
-                    class="input-group-text border-warning-subtle rounded-start-pill"
-                    >Stock</span
-                  >
-                  <span
-                    class="input-group-text border-warning-subtle rounded-end-pill"
-                    >10</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-5 col-md-6 col-8">
-            <div class="card shadow border-0 m-2 p-2">
-              <img
-                src="../img/products/laptop-computer-isolated-on-white-background.jpg"
-                class="card-img-top"
-                alt="Imagen de prueba" />
-              <div class="card-body">
-                <h5 class="card-title">Producto</h5>
-                <p class="card-text">
-                  Una breve descripcion de prueba para la carta del producto en
-                  el catalogo.
-                </p>
-
-                <div class="input-group my-1">
-                  <button
-                    id="buttonProductCardTest01"
-                    class="btn btn-outline-warning rounded-start-pill"
-                    type="button">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                  <input
-                    id="inputNumberProductCardTest01"
-                    class="form-control border-warning-subtle rounded-end-pill"
-                    type="number"
-                    placeholder=""
-                    aria-label="Cantidad de Productos" />
-                </div>
-                <div class="input-group justify-content-center">
-                  <span
-                    class="input-group-text border-warning-subtle rounded-start-pill"
-                    >Stock</span
-                  >
-                  <span
-                    class="input-group-text border-warning-subtle rounded-end-pill"
-                    >10</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-5 col-md-6 col-8">
-            <div class="card shadow border-0 m-2 p-2">
-              <img
-                src="../img/products/laptop-computer-isolated-on-white-background.jpg"
-                class="card-img-top"
-                alt="Imagen de prueba" />
-              <div class="card-body">
-                <h5 class="card-title">Producto</h5>
-                <p class="card-text">
-                  Una breve descripcion de prueba para la carta del producto en
-                  el catalogo.
-                </p>
-
-                <div class="input-group my-1">
-                  <button
-                    id="buttonProductCardTest01"
-                    class="btn btn-outline-warning rounded-start-pill"
-                    type="button">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                  <input
-                    id="inputNumberProductCardTest01"
-                    class="form-control border-warning-subtle rounded-end-pill"
-                    type="number"
-                    placeholder=""
-                    aria-label="Cantidad de Productos" />
-                </div>
-                <div class="input-group justify-content-center">
-                  <span
-                    class="input-group-text border-warning-subtle rounded-start-pill"
-                    >Stock</span
-                  >
-                  <span
-                    class="input-group-text border-warning-subtle rounded-end-pill"
-                    >10</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row justify-content-center my-2">
-          <div class="col-xl-3 col-lg-5 col-md-6 col-8">
-            <div class="card shadow border-0 m-2 p-2">
-              <img
-                src="../img/products/laptop-computer-isolated-on-white-background.jpg"
-                class="card-img-top"
-                alt="Imagen de prueba" />
-              <div class="card-body">
-                <h5 class="card-title">Producto</h5>
-                <p class="card-text">
-                  Una breve descripcion de prueba para la carta del producto en
-                  el catalogo.
-                </p>
-
-                <div class="input-group my-1">
-                  <button
-                    id="buttonProductCardTest01"
-                    class="btn btn-outline-warning rounded-start-pill"
-                    type="button">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                  <input
-                    id="inputNumberProductCardTest01"
-                    class="form-control border-warning-subtle rounded-end-pill"
-                    type="number"
-                    placeholder=""
-                    aria-label="Cantidad de Productos" />
-                </div>
-                <div class="input-group justify-content-center">
-                  <span
-                    class="input-group-text border-warning-subtle rounded-start-pill"
-                    >Stock</span
-                  >
-                  <span
-                    class="input-group-text border-warning-subtle rounded-end-pill"
-                    >10</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-5 col-md-6 col-8">
-            <div class="card shadow border-0 m-2 p-2">
-              <img
-                src="../img/products/laptop-computer-isolated-on-white-background.jpg"
-                class="card-img-top"
-                alt="Imagen de prueba" />
-              <div class="card-body">
-                <h5 class="card-title">Producto</h5>
-                <p class="card-text">
-                  Una breve descripcion de prueba para la carta del producto en
-                  el catalogo.
-                </p>
-
-                <div class="input-group my-1">
-                  <button
-                    id="buttonProductCardTest01"
-                    class="btn btn-outline-warning rounded-start-pill"
-                    type="button">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                  <input
-                    id="inputNumberProductCardTest01"
-                    class="form-control border-warning-subtle rounded-end-pill"
-                    type="number"
-                    placeholder=""
-                    aria-label="Cantidad de Productos" />
-                </div>
-                <div class="input-group justify-content-center">
-                  <span
-                    class="input-group-text border-warning-subtle rounded-start-pill"
-                    >Stock</span
-                  >
-                  <span
-                    class="input-group-text border-warning-subtle rounded-end-pill"
-                    >10</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-5 col-md-6 col-8">
-            <div class="card shadow border-0 m-2 p-2">
-              <img
-                src="../img/products/laptop-computer-isolated-on-white-background.jpg"
-                class="card-img-top"
-                alt="Imagen de prueba" />
-              <div class="card-body">
-                <h5 class="card-title">Producto</h5>
-                <p class="card-text">
-                  Una breve descripcion de prueba para la carta del producto en
-                  el catalogo.
-                </p>
-
-                <div class="input-group my-1">
-                  <button
-                    id="buttonProductCardTest01"
-                    class="btn btn-outline-warning rounded-start-pill"
-                    type="button">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                  <input
-                    id="inputNumberProductCardTest01"
-                    class="form-control border-warning-subtle rounded-end-pill"
-                    type="number"
-                    placeholder=""
-                    aria-label="Cantidad de Productos" />
-                </div>
-                <div class="input-group justify-content-center">
-                  <span
-                    class="input-group-text border-warning-subtle rounded-start-pill"
-                    >Stock</span
-                  >
-                  <span
-                    class="input-group-text border-warning-subtle rounded-end-pill"
-                    >10</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-5 col-md-6 col-8">
-            <div class="card shadow border-0 m-2 p-2">
-              <img
-                src="../img/products/laptop-computer-isolated-on-white-background.jpg"
-                class="card-img-top"
-                alt="Imagen de prueba" />
-              <div class="card-body">
-                <h5 class="card-title">Producto</h5>
-                <p class="card-text">
-                  Una breve descripcion de prueba para la carta del producto en
-                  el catalogo.
-                </p>
-
-                <div class="input-group my-1">
-                  <button
-                    id="buttonProductCardTest01"
-                    class="btn btn-outline-warning rounded-start-pill"
-                    type="button">
-                    <i class="bi bi-cart-plus"></i>
-                  </button>
-                  <input
-                    id="inputNumberProductCardTest01"
-                    class="form-control border-warning-subtle rounded-end-pill"
-                    type="number"
-                    placeholder=""
-                    aria-label="Cantidad de Productos" />
-                </div>
-                <div class="input-group justify-content-center">
-                  <span
-                    class="input-group-text border-warning-subtle rounded-start-pill"
-                    >Stock</span
-                  >
-                  <span
-                    class="input-group-text border-warning-subtle rounded-end-pill"
-                    >10</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div
+          id="cardContainer"
+          class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4 justify-content-center"></div>
       </div>
     </main>
 
     <footer class="my-2"></footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.15.15/validator.min.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
+    <script
+      type="module"
+      src="../js/catalogoProductos/vistaCatalogoProductos.js"></script>
     <script type="module" src="../js/gestores/gestor_sesion.js"></script>
     <script type="module" src="../js/btn_sesion.js"></script>
   </body>

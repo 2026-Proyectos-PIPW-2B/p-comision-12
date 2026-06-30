@@ -1,11 +1,9 @@
 import {
-  agregarAlCarrito,
   editarCantidad,
   eliminarDelCarrito,
   conseguirCarrito,
 } from "../gestores/gestorCarrito.js";
 
-// Tabla tBody
 const contenedorItems = document.getElementById("contenedorItems");
 const totalLabel = document.getElementById("total");
 
@@ -14,7 +12,7 @@ window.addEventListener("load", function () {
   cargarCarrito();
 });
 
-function cargarCarrito() {
+export function cargarCarrito() {
   const carrito = conseguirCarrito();
   let total = 0;
 
@@ -62,7 +60,6 @@ function cargarCarrito() {
 
     botonEliminar.addEventListener("click", function (event) {
       const idItemCarrito = botonEliminar.getAttribute("data-identificador");
-      console.log(idItemCarrito);
       eliminarDelCarrito(idItemCarrito);
       cargarCarrito();
     });
@@ -82,7 +79,15 @@ function cargarCarrito() {
       "form-control border-warning-subtle rounded-pill text-center flex-shrink-0 col-4 col-md-3";
     inputCantidad.type = "number";
     inputCantidad.value = carrito[index].cantidad;
+    inputCantidad.min = 1;
+    inputCantidad.setAttribute("data-identificador", carrito[index].id);
     divSubTotal.appendChild(inputCantidad);
+
+    inputCantidad.addEventListener("input", (event) => {
+      const idItemCarrito = inputCantidad.getAttribute("data-identificador");
+      editarCantidad(idItemCarrito, inputCantidad.value);
+      cargarCarrito();
+    });
 
     const pSubTotal = document.createElement("p");
     pSubTotal.className = "mb-0 ms-3 fs-3";

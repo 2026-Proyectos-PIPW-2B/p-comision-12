@@ -75,6 +75,7 @@ export function cargarCatalogo(productos) {
     inputCantidad.style = "min-width: 50px; max-width: 50%";
     inputCantidad.type = "number";
     inputCantidad.value = 1;
+    inputCantidad.min = 1;
     inputGroupCarrito.appendChild(inputCantidad);
 
     const inputGroupStock = document.createElement("div");

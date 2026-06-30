@@ -24,7 +24,7 @@ export function validacion() {
     let estado = conseguir_estado_cuenta(usuario);
     const resultado = conseguir_cuenta_login(usuario, contrasenia);
 
-    if (resultado === "object") {
+    if (typeof resultado === "object") {
 
         if (estado === false) {
             mostrar_error(username, "error_inicio_username", "La cuenta se encuentra inhabilitada");

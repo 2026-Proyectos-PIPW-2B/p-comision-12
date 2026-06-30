@@ -4,6 +4,8 @@ import {
   vaciarCarrito,
 } from "../gestores/gestorCarrito.js";
 
+import { actualizarCarritoBadge } from "../carritoBadge.js";
+
 import { cargarCarrito } from "../carrito/vistaCarrito.js";
 
 const botonFinalizarCompra = document.getElementById("botonFinalizarCompra");
@@ -21,6 +23,7 @@ function inicializarBotonFinalizarCompra() {
     //TO-DO: Confirmar Carrito y hacer algo antes de vaciarlo! (Asociar pedido al usuario!)
 
     vaciarCarrito();
+    actualizarCarritoBadge();
     cargarCarrito();
   });
 }

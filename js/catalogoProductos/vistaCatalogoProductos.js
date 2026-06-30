@@ -2,6 +2,10 @@ import { listadoProductos } from "../gestores/gestorProductos.js";
 
 import { agregarAlCarrito } from "../gestores/gestorCarrito.js";
 
+import { actualizarCarritoBadge } from "../carritoBadge.js";
+
+import { mostrarToast } from "../catalogoProductos/vistaCatalogoToasts.js";
+
 // Tabla tBody
 const catalogo = document.getElementById("cardContainer");
 
@@ -108,8 +112,9 @@ export function cargarCatalogo(productos) {
     botonCarrito.addEventListener("click", function (event) {
       const idProducto = botonCarrito.getAttribute("data-identificador");
       const cantidad = inputCantidad.value;
-      1;
+      mostrarToast();
       agregarAlCarrito(idProducto, cantidad);
+      actualizarCarritoBadge();
     });
   }
 }

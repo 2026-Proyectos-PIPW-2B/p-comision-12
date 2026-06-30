@@ -4,6 +4,8 @@ import {
   conseguirCarrito,
 } from "../gestores/gestorCarrito.js";
 
+import { actualizarCarritoBadge } from "../carritoBadge.js";
+
 const contenedorItems = document.getElementById("contenedorItems");
 const totalLabel = document.getElementById("total");
 
@@ -61,6 +63,7 @@ export function cargarCarrito() {
     botonEliminar.addEventListener("click", function (event) {
       const idItemCarrito = botonEliminar.getAttribute("data-identificador");
       eliminarDelCarrito(idItemCarrito);
+      actualizarCarritoBadge();
       cargarCarrito();
     });
 
@@ -88,7 +91,7 @@ export function cargarCarrito() {
       const idItemCarrito = inputCantidad.getAttribute("data-identificador");
 
       editarCantidad(idItemCarrito, Number(inputCantidad.value));
-
+      actualizarCarritoBadge();
       cargarCarrito();
     });
 

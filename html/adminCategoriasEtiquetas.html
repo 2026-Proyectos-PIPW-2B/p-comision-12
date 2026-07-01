@@ -81,11 +81,15 @@
                 </a>
                 <a
                   id="linkCarrito"
-                  class="btn rounded-pill btn-outline-warning text-nowrap my-1"
+                  class="btn rounded-pill btn-outline-warning text-nowrap my-1 position-relative"
                   href="../html/carrito.html"
                   role="button">
                   <i class="bi bi-cart-fill"></i>
                   <span>Carrito</span>
+                  <span
+                    id="carritoBadge"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning-subtle">
+                  </span>
                 </a>
                 <a
                   id="linkCatalogo"
@@ -512,6 +516,7 @@
     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
     <script type="module" src="../js/gestores/gestor_sesion.js"></script>
+    <script type="module" src="../js/carritoBadge.js"></script>
     <script type="module" src="../js/btn_sesion.js"></script>
     <script type="module" src="../js/redireccionado_usuario.js"></script>
   </body>

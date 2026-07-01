@@ -81,11 +81,15 @@
                 </a>
                 <a
                   id="linkCarrito"
-                  class="btn rounded-pill btn-outline-warning text-nowrap my-1"
+                  class="btn rounded-pill btn-outline-warning text-nowrap my-1 position-relative"
                   href="../html/carrito.html"
                   role="button">
                   <i class="bi bi-cart-fill"></i>
                   <span>Carrito</span>
+                  <span
+                    id="carritoBadge"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning-subtle">
+                  </span>
                 </a>
                 <a
                   id="linkCatalogo"
@@ -222,6 +226,7 @@
       </div>
     </section>
 
+    <!-- Catalogo -->
     <main class="my-5">
       <div class="container text-center" data-bs-theme="dark">
         <div
@@ -229,6 +234,11 @@
           class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4 justify-content-center"></div>
       </div>
     </main>
+
+    <!-- Contenedor de Toasts -->
+    <div
+      id="toastContainer"
+      class="toast-container position-fixed p-5 bottom-0 end-0"></div>
 
     <footer class="my-2"></footer>
 
@@ -240,6 +250,7 @@
     <script
       type="module"
       src="../js/catalogoProductos/vistaCatalogoFiltros.js"></script>
+    <script type="module" src="../js/carritoBadge.js"></script>
     <script type="module" src="../js/gestores/gestor_sesion.js"></script>
     <script type="module" src="../js/btn_sesion.js"></script>
     <script type="module" src="../js/index.js"></script>

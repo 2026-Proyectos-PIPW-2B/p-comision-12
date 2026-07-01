@@ -19,10 +19,10 @@ function inicializarBotonFinalizarCompra() {
   botonFinalizarCompra.addEventListener("click", function (event) {
     const carrito = conseguirCarrito();
 
-    confirmarCarrito();
-    //TO-DO: Confirmar Carrito y hacer algo antes de vaciarlo! (Asociar pedido al usuario!)
-
+    carritoConfirmado = confirmarCarrito();
+    crearPedido(carritoConfirmado);
     vaciarCarrito();
+
     actualizarCarritoBadge();
     cargarCarrito();
   });

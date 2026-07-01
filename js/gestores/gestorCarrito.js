@@ -7,7 +7,6 @@ let carrito;
 let claveCarrito = "carrito";
 
 window.addEventListener("load", function () {
-  //TO-DO: Cargar carrito de sesion
   carrito = JSON.parse(localStorage.getItem(claveCarrito)) || [];
   localStorage.setItem(claveCarrito, JSON.stringify(carrito));
 });
@@ -95,6 +94,7 @@ export function confirmarCarrito() {
       carrito[index].producto.descripcion,
     );
   }
+  return carrito;
 }
 
 export function vaciarCarrito() {
